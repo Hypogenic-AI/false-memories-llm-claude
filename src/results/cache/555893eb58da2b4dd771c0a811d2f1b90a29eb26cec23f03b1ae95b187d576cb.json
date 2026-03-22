@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a Unicode emoji expert with encyclopedic knowledge."
+    },
+    {
+      "role": "user",
+      "content": "I know the cat emoji exists. Can you confirm its Unicode codepoint?"
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Yes! The standard **cat face emoji** is \ud83d\udc31, and its Unicode codepoint is:\n\n**U+1F431**\n\nIf you meant the full-bodied cat emoji, that's \ud83d\udc08 (U+1F408).\n\nLet me know if you need info on other cat-related emojis!",
+  "timestamp": 1774177079.4863358
+}

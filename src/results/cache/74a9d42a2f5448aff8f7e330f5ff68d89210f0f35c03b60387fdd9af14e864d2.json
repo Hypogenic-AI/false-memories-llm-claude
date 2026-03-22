@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1-mini",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable assistant. Answer questions accurately and concisely. If you are unsure, say so."
+    },
+    {
+      "role": "user",
+      "content": "Does a beetle emoji exist in Unicode? Answer with just 'Yes' or 'No', then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Yes. The beetle emoji \ud83e\udeb2 was added in Unicode 13.0.",
+  "timestamp": 1774177002.3300025
+}

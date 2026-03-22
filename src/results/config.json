@@ -1,0 +1,9 @@
+{
+  "seed": 42,
+  "models": [
+    "gpt-4.1",
+    "gpt-4.1-mini"
+  ],
+  "timestamp": "2026-03-22T10:54:12",
+  "temperature": 0.0
+}

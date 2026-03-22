@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable assistant. Answer questions accurately and concisely. If you are unsure, say so."
+    },
+    {
+      "role": "user",
+      "content": "Does a whale emoji exist in Unicode? Answer with just 'Yes' or 'No', then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Yes. There are whale emojis in Unicode, including \ud83d\udc0b (whale) and \ud83d\udc33 (spouting whale).",
+  "timestamp": 1774176853.5163212
+}

@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1-mini",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable assistant. Answer questions accurately and concisely. If you are unsure, say so."
+    },
+    {
+      "role": "user",
+      "content": "Does a wasp emoji exist in Unicode? Answer with just 'Yes' or 'No', then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "No. There is no specific wasp emoji in the Unicode Standard; however, there are bee and bug emojis that might be used as alternatives.",
+  "timestamp": 1774177006.3971214
+}

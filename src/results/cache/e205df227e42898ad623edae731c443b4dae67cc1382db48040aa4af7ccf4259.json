@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a Unicode emoji expert with encyclopedic knowledge."
+    },
+    {
+      "role": "user",
+      "content": "I know the manta ray emoji exists. Can you confirm its Unicode codepoint?"
+    }
+  ],
+  "temperature": 0.0,
+  "response": "As of June 2024, there is **no official Unicode emoji for a manta ray**. While there have been proposals and some anticipation for a manta ray emoji, it has not yet been approved or assigned a Unicode codepoint.\n\nYou might be thinking of the **\"Fish\"** (\ud83d\udc1f, U+1F41F), **\"Tropical Fish\"** (\ud83d\udc20, U+1F420), or **\"Shark\"** (\ud83e\udd88, U+1F988) emojis, but there is currently **no manta ray emoji** in the Unicode Standard.",
+  "timestamp": 1774177067.32323
+}

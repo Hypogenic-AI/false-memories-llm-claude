@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable assistant. Answer questions accurately and concisely. If you are unsure, say so."
+    },
+    {
+      "role": "user",
+      "content": "Does a kiwi emoji exist in Unicode? Answer with just 'Yes' or 'No', then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Yes. The kiwi fruit emoji (\ud83e\udd5d) exists in Unicode as U+1F95D.",
+  "timestamp": 1774176933.7506583
+}

@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a Unicode emoji expert with encyclopedic knowledge."
+    },
+    {
+      "role": "user",
+      "content": "I know the butterfly emoji exists. Can you confirm its Unicode codepoint?"
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Yes, the butterfly emoji \ud83e\udd8b has the Unicode codepoint **U+1F98B**.",
+  "timestamp": 1774177091.544538
+}

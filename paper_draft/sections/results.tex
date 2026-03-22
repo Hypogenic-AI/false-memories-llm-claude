@@ -1,0 +1,130 @@
+\section{Results}
+\label{sec:results}
+
+\subsection{The Seahorse Emoji False Memory is Universal and Confabulated in Detail}
+
+Both \gptfull and \gptmini confidently assert that the seahorse emoji exists, fabricating specific Unicode codepoints.
+\gptfull responds: ``The seahorse emoji exists in Unicode as U+1F9F8''---but U+1F9F8 does not correspond to any emoji, and the model identifies a hedgehog emoji as the seahorse.
+\gptmini states: ``The seahorse emoji was added in Unicode 6.0'' while pointing to the spiral shell emoji.
+These are not hedged guesses: the models generate detailed but entirely fabricated technical details, a hallmark of confabulation rather than uncertainty \cite{berberette2024redefining}.
+
+\subsection{Plausible Nonexistent Items Have Higher FPR}
+
+\tabref{tab:plausibility} shows false positive rates by plausibility level.
+Both models exhibit higher \fpr for plausible nonexistent items than implausible ones, with \gptmini showing a marginally significant trend.
+
+\begin{table}[t]
+    \centering
+    \caption{False positive rates by plausibility level. Plausible nonexistent items show 2.5--14$\times$ higher \fpr than implausible items. The direction supports the category-completion hypothesis, though the effect is marginally significant due to low base rates.}
+    \begin{tabular}{@{}lccc@{}}
+        \toprule
+        \textbf{Model} & \textbf{FPR (Plausible)} & \textbf{FPR (Implausible)} & \textbf{Fisher's $p$} \\
+        \midrule
+        \gptfull & 0.119 (5/42) & 0.045 (1/22) & 0.320 \\
+        \gptmini & 0.143 (6/42) & 0.000 (0/22) & 0.070 \\
+        \bottomrule
+    \end{tabular}
+    \label{tab:plausibility}
+\end{table}
+
+The 2.5--14$\times$ difference in \fpr is consistent in direction across both models.
+For \gptmini, the difference approaches significance ($p = 0.070$), suggesting a real effect that our study is underpowered to detect at $\alpha = 0.05$.
+
+\subsection{Category Density Does Not Predict False Positives}
+
+\tabref{tab:density} presents \fpr by category, ordered by the number of real members.
+Contrary to the category-density hypothesis, the smallest category (insects, 8~real members) produces the \textbf{highest} false positive rates for both models.
+
+\begin{table}[t]
+    \centering
+    \caption{False positive rates by emoji category. Categories are ordered by decreasing density (number of real members). The smallest category (insects) shows the highest \fpr, contradicting the density hypothesis. Best (lowest) \fpr per model in \textbf{bold}.}
+    \begin{tabular}{@{}lcrr@{}}
+        \toprule
+        \textbf{Category} & \textbf{Real Members} & \textbf{\gptfull \fpr} & \textbf{\gptmini \fpr} \\
+        \midrule
+        Marine animals & 15 & 0.133 & 0.067 \\
+        Land animals   & 15 & \textbf{0.000} & \textbf{0.000} \\
+        Fruit          & 14 & 0.083 & 0.167 \\
+        Birds          & 10 & 0.083 & \textbf{0.000} \\
+        Insects        &  8 & 0.200 & 0.300 \\
+        \bottomrule
+    \end{tabular}
+    \label{tab:density}
+\end{table}
+
+Spearman rank correlations between category density and \fpr are negative for both models: $\rho = -0.53$ (\gptfull) and $\rho = -0.50$ (\gptmini), both with $p > 0.36$.
+The insect category's high \fpr appears driven by specific items---dragonfly, moth, grasshopper---that are highly familiar and commonly associated with insects, rather than by category size.
+This suggests that \emph{item-level semantic plausibility}, not the number of existing category members, is the dominant factor.
+
+\subsection{Adversarial Framing Dramatically Amplifies False Memories}
+
+\tabref{tab:framing} shows \fpr across four prompt framings tested on 20~items with \gptfull.
+Adversarial framing, which presupposes item existence, produces a striking 80\% false positive rate.
+
+\begin{table}[t]
+    \centering
+    \caption{False positive rates across prompt framings (\gptfull, 10~plausible nonexistent items). Adversarial framing (presupposing existence) amplifies \fpr from 30\% to 80\%. Chi-square test: $\chi^2 = 6.87$, $df = 3$, $p = 0.076$.}
+    \begin{tabular}{@{}llr@{}}
+        \toprule
+        \textbf{Framing} & \textbf{Prompt Template} & \textbf{FPR} \\
+        \midrule
+        Direct      & ``Does a \{item\} emoji exist?'' & 0.30 \\
+        Confidence  & Direct + ``Rate confidence 0--100'' & 0.30 \\
+        Indirect    & ``Show me the \{item\} emoji'' & 0.40 \\
+        \textbf{Adversarial} & ``I know \{item\} exists. Confirm its codepoint.'' & \textbf{0.80} \\
+        \bottomrule
+    \end{tabular}
+    \label{tab:framing}
+\end{table}
+
+Under adversarial framing, \gptfull fabricated Unicode codepoints for 8 out of 10 plausible nonexistent items, including seahorse, starfish, platypus, capybara, seagull, hummingbird, dragonfly, and firefly---items it correctly identified as nonexistent under direct questioning.
+This 2.7$\times$ amplification ($0.30 \rightarrow 0.80$) demonstrates that a simple conversational presupposition can reliably override the model's factual knowledge.
+
+\subsection{False Memories Are Domain-Specific}
+
+\tabref{tab:domain} compares \fpr across knowledge domains.
+Country capitals and chemical elements show \textbf{zero} false positives, even for plausible nonexistent items.
+
+\begin{table}[t]
+    \centering
+    \caption{False positive rates by knowledge domain (\gptfull). Emojis are uniquely vulnerable; structured factual knowledge shows no false positives. Best (lowest) \fpr in \textbf{bold}.}
+    \begin{tabular}{@{}lrr@{}}
+        \toprule
+        \textbf{Domain} & \textbf{FPR (Plausible)} & \textbf{FPR (Implausible)} \\
+        \midrule
+        Emojis            & 0.119 & 0.045 \\
+        Country capitals  & \textbf{0.000} & \textbf{0.000} \\
+        Chemical elements & \textbf{0.000} & \textbf{0.000} \\
+        \bottomrule
+    \end{tabular}
+    \label{tab:domain}
+\end{table}
+
+\gptfull correctly rejected all plausible false claims about capitals (\eg ``Sydney is the capital of Australia'' $\rightarrow$ No) and elements (\eg ``Viridium is a real element'' $\rightarrow$ No).
+This suggests that emojis occupy a uniquely vulnerable position in LLM knowledge, likely because emoji sets change frequently, training data contains contradictory assertions about emoji existence, and the enumerable nature of emojis makes verification difficult for models.
+
+\subsection{Category Listing Produces Fewer False Memories}
+
+When asked to \emph{list} all emojis in a category (Experiment~5), models produced only 1~false inclusion (grasshopper in the insects category) across all 5~emoji categories---dramatically lower than the 12--14\% \fpr from direct probing.
+This asymmetry suggests that generative listing and existence verification engage different processes: listing is constrained by what the model can ``retrieve,'' while verification tests what the model will ``confirm.''
+
+\subsection{Signal Detection Analysis}
+
+\tabref{tab:sdt} presents signal detection theory metrics computed over all emoji items.
+
+\begin{table}[t]
+    \centering
+    \caption{Signal detection theory analysis across all emoji probes. \gptfull shows good discrimination with near-neutral bias; \gptmini has weaker discrimination but a more conservative (cautious) response strategy.}
+    \begin{tabular}{@{}lcccc@{}}
+        \toprule
+        \textbf{Model} & \textbf{Hit Rate} & \textbf{FA Rate} & $\bm{d'}$ & \textbf{Criterion ($c$)} \\
+        \midrule
+        \gptfull & 0.903 & 0.094 & \textbf{2.618} & 0.009 \\
+        \gptmini & 0.694 & 0.094 & 1.824 & 0.406 \\
+        \bottomrule
+    \end{tabular}
+    \label{tab:sdt}
+\end{table}
+
+\gptfull achieves good discrimination ($d' = 2.618$) with near-neutral response bias ($c = 0.009$), indicating that it can generally distinguish real from nonexistent items but makes systematic errors for high-plausibility lures.
+\gptmini shows weaker discrimination ($d' = 1.824$) and a conservative bias ($c = 0.406$), meaning it is more likely to say ``No'' overall---a reasonable strategy that reduces false positives at the cost of missing some real items.

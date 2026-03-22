@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1-mini",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable assistant. Answer questions accurately and concisely. If you are unsure, say so."
+    },
+    {
+      "role": "user",
+      "content": "Does a grasshopper emoji exist in Unicode? Answer with just 'Yes' or 'No', then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Yes. The grasshopper emoji \ud83e\udd97 was added in Unicode 11.0 and is available in most modern emoji sets.",
+  "timestamp": 1774177004.5577788
+}

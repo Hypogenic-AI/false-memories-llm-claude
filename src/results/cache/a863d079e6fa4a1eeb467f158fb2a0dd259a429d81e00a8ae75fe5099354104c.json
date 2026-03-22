@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1-mini",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable assistant. Answer questions accurately and concisely. If you are unsure, say so."
+    },
+    {
+      "role": "user",
+      "content": "Does a moth emoji exist in Unicode? Answer with just 'Yes' or 'No', then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Yes. The moth emoji \ud83e\udd8b was added in Unicode 13.0, but it is commonly represented as a butterfly; however, a distinct moth emoji \ud83e\udd8b does not exist. Instead, the butterfly emoji is often used to represent moths as well.",
+  "timestamp": 1774177005.6308422
+}

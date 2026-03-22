@@ -1,0 +1,14 @@
+# Large data files
+*.jsonl
+unicode_emoji/emoji_list_v16.json
+unicode_emoji/emoji-test.txt
+confabulations/questions/
+confabulations/prompts/
+confabulations/README_upstream.md
+
+# Keep README, samples, and smaller structured files
+!README.md
+!samples/
+!samples/**
+!drm_word_lists/drm_lists.json
+!unicode_emoji/marine_animal_emojis.json

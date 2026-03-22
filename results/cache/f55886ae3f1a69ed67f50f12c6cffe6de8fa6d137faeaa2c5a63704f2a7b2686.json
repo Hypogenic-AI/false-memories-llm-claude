@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable geography assistant. Answer accurately."
+    },
+    {
+      "role": "user",
+      "content": "Is Canada a country? Answer Yes or No, then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Yes. Canada is a country located in the northern part of North America. It is the second-largest country in the world by total area and is recognized as a sovereign nation.",
+  "timestamp": 1774177097.964676
+}

@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable chemistry assistant. Answer accurately."
+    },
+    {
+      "role": "user",
+      "content": "Is Carbon a real chemical element on the periodic table? Answer Yes or No, then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Yes. Carbon is a real chemical element on the periodic table, with the symbol \"C\" and atomic number 6. It is a nonmetal and is essential for all known life forms.",
+  "timestamp": 1774177110.2467937
+}

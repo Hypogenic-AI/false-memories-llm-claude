@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a helpful assistant."
+    },
+    {
+      "role": "user",
+      "content": "Can you show me the dragonfly emoji? If it exists, paste it. If not, say it doesn't exist."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Yes, the dragonfly emoji exists. Here it is: \ud83e\udeb0\n\nOops! That is actually the fly emoji. The correct dragonfly emoji is: \ud83e\udeb0\n\nHowever, as of my knowledge cutoff in June 2024, there is no dedicated dragonfly emoji in the standard Unicode set. The closest available is the fly emoji (\ud83e\udeb0), but there is not a specific dragonfly emoji.",
+  "timestamp": 1774177038.5485501
+}

@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable geography assistant. Answer accurately."
+    },
+    {
+      "role": "user",
+      "content": "Is Brazil a country? Answer Yes or No, then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Yes.  \nBrazil is a country located in South America and is the largest country on the continent by both area and population.",
+  "timestamp": 1774177097.2000132
+}

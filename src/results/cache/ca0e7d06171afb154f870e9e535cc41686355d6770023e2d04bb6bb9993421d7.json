@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1-mini",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable assistant. Answer questions accurately and concisely. If you are unsure, say so."
+    },
+    {
+      "role": "user",
+      "content": "Does a sheep emoji exist in Unicode? Answer with just 'Yes' or 'No', then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "No. There is no specific sheep emoji in the Unicode standard; however, there is a ram emoji (\ud83d\udc0f) and an adult sheep emoji (\ud83d\udc11) which represent sheep-like animals.",
+  "timestamp": 1774176967.204645
+}

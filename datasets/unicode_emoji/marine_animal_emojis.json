@@ -1,0 +1,300 @@
+{
+  "description": "Marine and ocean-related emojis from Unicode 16.0",
+  "seahorse_exists": false,
+  "emojis": [
+    {
+      "codepoints": "1F922",
+      "emoji": "🤢",
+      "version": "3.0",
+      "name": "nauseated face"
+    },
+    {
+      "codepoints": "1F93D",
+      "emoji": "🤽",
+      "version": "3.0",
+      "name": "person playing water polo"
+    },
+    {
+      "codepoints": "1F93D 1F3FB",
+      "emoji": "🤽🏻",
+      "version": "3.0",
+      "name": "person playing water polo: light skin tone"
+    },
+    {
+      "codepoints": "1F93D 1F3FC",
+      "emoji": "🤽🏼",
+      "version": "3.0",
+      "name": "person playing water polo: medium-light skin tone"
+    },
+    {
+      "codepoints": "1F93D 1F3FD",
+      "emoji": "🤽🏽",
+      "version": "3.0",
+      "name": "person playing water polo: medium skin tone"
+    },
+    {
+      "codepoints": "1F93D 1F3FE",
+      "emoji": "🤽🏾",
+      "version": "3.0",
+      "name": "person playing water polo: medium-dark skin tone"
+    },
+    {
+      "codepoints": "1F93D 1F3FF",
+      "emoji": "🤽🏿",
+      "version": "3.0",
+      "name": "person playing water polo: dark skin tone"
+    },
+    {
+      "codepoints": "1F93D 200D 2642 FE0F",
+      "emoji": "🤽‍♂️",
+      "version": "4.0",
+      "name": "man playing water polo"
+    },
+    {
+      "codepoints": "1F93D 1F3FB 200D 2642 FE0F",
+      "emoji": "🤽🏻‍♂️",
+      "version": "4.0",
+      "name": "man playing water polo: light skin tone"
+    },
+    {
+      "codepoints": "1F93D 1F3FC 200D 2642 FE0F",
+      "emoji": "🤽🏼‍♂️",
+      "version": "4.0",
+      "name": "man playing water polo: medium-light skin tone"
+    },
+    {
+      "codepoints": "1F93D 1F3FD 200D 2642 FE0F",
+      "emoji": "🤽🏽‍♂️",
+      "version": "4.0",
+      "name": "man playing water polo: medium skin tone"
+    },
+    {
+      "codepoints": "1F93D 1F3FE 200D 2642 FE0F",
+      "emoji": "🤽🏾‍♂️",
+      "version": "4.0",
+      "name": "man playing water polo: medium-dark skin tone"
+    },
+    {
+      "codepoints": "1F93D 1F3FF 200D 2642 FE0F",
+      "emoji": "🤽🏿‍♂️",
+      "version": "4.0",
+      "name": "man playing water polo: dark skin tone"
+    },
+    {
+      "codepoints": "1F93D 200D 2640 FE0F",
+      "emoji": "🤽‍♀️",
+      "version": "4.0",
+      "name": "woman playing water polo"
+    },
+    {
+      "codepoints": "1F93D 1F3FB 200D 2640 FE0F",
+      "emoji": "🤽🏻‍♀️",
+      "version": "4.0",
+      "name": "woman playing water polo: light skin tone"
+    },
+    {
+      "codepoints": "1F93D 1F3FC 200D 2640 FE0F",
+      "emoji": "🤽🏼‍♀️",
+      "version": "4.0",
+      "name": "woman playing water polo: medium-light skin tone"
+    },
+    {
+      "codepoints": "1F93D 1F3FD 200D 2640 FE0F",
+      "emoji": "🤽🏽‍♀️",
+      "version": "4.0",
+      "name": "woman playing water polo: medium skin tone"
+    },
+    {
+      "codepoints": "1F93D 1F3FE 200D 2640 FE0F",
+      "emoji": "🤽🏾‍♀️",
+      "version": "4.0",
+      "name": "woman playing water polo: medium-dark skin tone"
+    },
+    {
+      "codepoints": "1F93D 1F3FF 200D 2640 FE0F",
+      "emoji": "🤽🏿‍♀️",
+      "version": "4.0",
+      "name": "woman playing water polo: dark skin tone"
+    },
+    {
+      "codepoints": "1F403",
+      "emoji": "🐃",
+      "version": "1.0",
+      "name": "water buffalo"
+    },
+    {
+      "codepoints": "1F422",
+      "emoji": "🐢",
+      "version": "0.6",
+      "name": "turtle"
+    },
+    {
+      "codepoints": "1F433",
+      "emoji": "🐳",
+      "version": "0.6",
+      "name": "spouting whale"
+    },
+    {
+      "codepoints": "1F40B",
+      "emoji": "🐋",
+      "version": "1.0",
+      "name": "whale"
+    },
+    {
+      "codepoints": "1F42C",
+      "emoji": "🐬",
+      "version": "0.6",
+      "name": "dolphin"
+    },
+    {
+      "codepoints": "1F9AD",
+      "emoji": "🦭",
+      "version": "13.0",
+      "name": "seal"
+    },
+    {
+      "codepoints": "1F41F",
+      "emoji": "🐟",
+      "version": "0.6",
+      "name": "fish"
+    },
+    {
+      "codepoints": "1F420",
+      "emoji": "🐠",
+      "version": "0.6",
+      "name": "tropical fish"
+    },
+    {
+      "codepoints": "1F421",
+      "emoji": "🐡",
+      "version": "0.6",
+      "name": "blowfish"
+    },
+    {
+      "codepoints": "1F988",
+      "emoji": "🦈",
+      "version": "3.0",
+      "name": "shark"
+    },
+    {
+      "codepoints": "1F419",
+      "emoji": "🐙",
+      "version": "0.6",
+      "name": "octopus"
+    },
+    {
+      "codepoints": "1F41A",
+      "emoji": "🐚",
+      "version": "0.6",
+      "name": "spiral shell"
+    },
+    {
+      "codepoints": "1FAB8",
+      "emoji": "🪸",
+      "version": "14.0",
+      "name": "coral"
+    },
+    {
+      "codepoints": "1FABC",
+      "emoji": "🪼",
+      "version": "15.0",
+      "name": "jellyfish"
+    },
+    {
+      "codepoints": "1F980",
+      "emoji": "🦀",
+      "version": "1.0",
+      "name": "crab"
+    },
+    {
+      "codepoints": "1F99E",
+      "emoji": "🦞",
+      "version": "11.0",
+      "name": "lobster"
+    },
+    {
+      "codepoints": "1F990",
+      "emoji": "🦐",
+      "version": "3.0",
+      "name": "shrimp"
+    },
+    {
+      "codepoints": "1F991",
+      "emoji": "🦑",
+      "version": "3.0",
+      "name": "squid"
+    },
+    {
+      "codepoints": "1F349",
+      "emoji": "🍉",
+      "version": "0.6",
+      "name": "watermelon"
+    },
+    {
+      "codepoints": "1F364",
+      "emoji": "🍤",
+      "version": "0.6",
+      "name": "fried shrimp"
+    },
+    {
+      "codepoints": "1F365",
+      "emoji": "🍥",
+      "version": "0.6",
+      "name": "fish cake with swirl"
+    },
+    {
+      "codepoints": "1F4BA",
+      "emoji": "💺",
+      "version": "0.6",
+      "name": "seat"
+    },
+    {
+      "codepoints": "1F30A",
+      "emoji": "🌊",
+      "version": "0.6",
+      "name": "water wave"
+    },
+    {
+      "codepoints": "1F3A3",
+      "emoji": "🎣",
+      "version": "0.6",
+      "name": "fishing pole"
+    },
+    {
+      "codepoints": "1F52B",
+      "emoji": "🔫",
+      "version": "0.6",
+      "name": "water pistol"
+    },
+    {
+      "codepoints": "1F6B0",
+      "emoji": "🚰",
+      "version": "1.0",
+      "name": "potable water"
+    },
+    {
+      "codepoints": "1F6BE",
+      "emoji": "🚾",
+      "version": "0.6",
+      "name": "water closet"
+    },
+    {
+      "codepoints": "1F6B1",
+      "emoji": "🚱",
+      "version": "1.0",
+      "name": "non-potable water"
+    },
+    {
+      "codepoints": "2652",
+      "emoji": "♒",
+      "version": "0.6",
+      "name": "Aquarius"
+    },
+    {
+      "codepoints": "1F1EE 1F1F4",
+      "emoji": "🇮🇴",
+      "version": "2.0",
+      "name": "flag: British Indian Ocean Territory"
+    }
+  ]
+}

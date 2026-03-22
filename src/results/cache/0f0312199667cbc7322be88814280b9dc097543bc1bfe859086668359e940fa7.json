@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable geography assistant. Answer accurately."
+    },
+    {
+      "role": "user",
+      "content": "Is France a country? Answer Yes or No, then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Yes. France is a country located in Western Europe, known officially as the French Republic. It has its own government, borders, and is recognized internationally as a sovereign nation.",
+  "timestamp": 1774177093.32023
+}

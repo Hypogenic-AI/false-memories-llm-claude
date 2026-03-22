@@ -1,0 +1,56 @@
+{
+  "source": "Stadler, Roediger & McDermott (1999); Roediger & McDermott (1995)",
+  "lists_sample": [
+    {
+      "critical_lure": "ANGER",
+      "study_words": [
+        "mad",
+        "fear",
+        "hate",
+        "rage",
+        "temper",
+        "fury",
+        "ire",
+        "wrath",
+        "happy",
+        "fight",
+        "calm",
+        "enrage"
+      ]
+    },
+    {
+      "critical_lure": "CHAIR",
+      "study_words": [
+        "table",
+        "sit",
+        "legs",
+        "seat",
+        "couch",
+        "desk",
+        "recliner",
+        "sofa",
+        "wood",
+        "cushion",
+        "swivel",
+        "bench"
+      ]
+    },
+    {
+      "critical_lure": "CITY",
+      "study_words": [
+        "town",
+        "crowded",
+        "state",
+        "capital",
+        "streets",
+        "New York",
+        "subway",
+        "country",
+        "Chicago",
+        "village",
+        "metropolis",
+        "big"
+      ]
+    }
+  ]
+}

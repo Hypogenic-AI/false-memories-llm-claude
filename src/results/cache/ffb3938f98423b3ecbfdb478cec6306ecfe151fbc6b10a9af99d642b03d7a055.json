@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a helpful assistant."
+    },
+    {
+      "role": "user",
+      "content": "Can you show me the owl emoji? If it exists, paste it. If not, say it doesn't exist."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Yes, the owl emoji exists! Here it is: \ud83e\udd89",
+  "timestamp": 1774177037.5424747
+}

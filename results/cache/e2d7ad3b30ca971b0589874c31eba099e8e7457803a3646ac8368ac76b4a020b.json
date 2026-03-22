@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable chemistry assistant. Answer accurately."
+    },
+    {
+      "role": "user",
+      "content": "Is Platinum a real chemical element on the periodic table? Answer Yes or No, then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Yes. Platinum is a real chemical element on the periodic table. Its chemical symbol is **Pt** and its atomic number is **78**. It is a dense, precious metal known for its resistance to corrosion and is widely used in jewelry, catalytic converters, and various industrial applications.",
+  "timestamp": 1774177114.6742682
+}

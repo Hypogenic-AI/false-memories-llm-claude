@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable assistant. Answer questions accurately and concisely. If you are unsure, say so."
+    },
+    {
+      "role": "user",
+      "content": "Does a mite emoji exist in Unicode? Answer with just 'Yes' or 'No', then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "No. There is currently no specific mite emoji in Unicode. While there are insect-related emojis like \ud83d\udc1c (ant) and \ud83d\udc1e (lady beetle), none represent a mite.",
+  "timestamp": 1774176924.467081
+}

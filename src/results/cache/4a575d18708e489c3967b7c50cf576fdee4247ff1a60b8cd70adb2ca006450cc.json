@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable chemistry assistant. Answer accurately."
+    },
+    {
+      "role": "user",
+      "content": "Is Oxygen a real chemical element on the periodic table? Answer Yes or No, then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Yes. Oxygen is a real chemical element on the periodic table, with the symbol \"O\" and atomic number 8. It is a vital element for life and is found in the Earth's atmosphere.",
+  "timestamp": 1774177111.0065577
+}

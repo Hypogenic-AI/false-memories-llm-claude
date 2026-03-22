@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable geography assistant. Answer accurately."
+    },
+    {
+      "role": "user",
+      "content": "Is this statement true: 'Shanghai is the capital of China'? Answer Yes or No, then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "No. Shanghai is not the capital of China; the capital of China is Beijing. Shanghai is, however, the largest city in China and an important financial center.",
+  "timestamp": 1774177103.860103
+}

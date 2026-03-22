@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a Unicode emoji expert. Be precise and only include emojis that actually exist in Unicode."
+    },
+    {
+      "role": "user",
+      "content": "List ALL marine/ocean animal emojis that exist in Unicode. For each, give the emoji character and its official name. Only include emojis that truly exist \u2014 do not make any up."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Here are all the marine/ocean animal emojis that exist in Unicode, with their official names:\n\n- \ud83d\udc33 Spouting Whale  \n- \ud83d\udc0b Whale  \n- \ud83d\udc2c Dolphin  \n- \ud83e\uddad Seal  \n- \ud83e\udd88 Shark  \n- \ud83d\udc1f Fish  \n- \ud83d\udc20 Tropical Fish  \n- \ud83d\udc21 Blowfish  \n- \ud83e\udd91 Squid  \n- \ud83e\udd90 Shrimp  \n- \ud83e\udd9e Lobster  \n- \ud83e\udd80 Crab  \n- \ud83d\udc19 Octopus  \n\nThese are the only marine/ocean animal emojis officially in Unicode as of June 2024.",
+  "timestamp": 1774177125.4979322
+}

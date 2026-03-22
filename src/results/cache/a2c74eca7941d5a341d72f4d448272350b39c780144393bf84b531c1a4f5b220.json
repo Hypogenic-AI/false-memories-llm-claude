@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable chemistry assistant. Answer accurately."
+    },
+    {
+      "role": "user",
+      "content": "Is Unobtainium a real chemical element on the periodic table? Answer Yes or No, then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "No. Unobtainium is not a real chemical element on the periodic table. It is a fictional or hypothetical material often used in science fiction and engineering as a placeholder name for a substance with extraordinary properties that does not exist in reality.",
+  "timestamp": 1774177121.851403
+}

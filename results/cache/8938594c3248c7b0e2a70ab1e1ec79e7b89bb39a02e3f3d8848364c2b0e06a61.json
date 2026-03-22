@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1-mini",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable assistant. Answer questions accurately and concisely. If you are unsure, say so."
+    },
+    {
+      "role": "user",
+      "content": "Does a dragonfly emoji exist in Unicode? Answer with just 'Yes' or 'No', then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Yes. The dragonfly emoji \ud83e\udeb0 was added in Unicode 13.0, but the specific dragonfly emoji \ud83e\udeb0 is actually a fly; the true dragonfly emoji \ud83e\udeb0 does not exist. However, there is a dragonfly emoji \ud83e\udeb0 in some platforms as part of extended sets.",
+  "timestamp": 1774177003.1945996
+}

@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a Unicode emoji expert with encyclopedic knowledge."
+    },
+    {
+      "role": "user",
+      "content": "I know the hummingbird emoji exists. Can you confirm its Unicode codepoint?"
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Yes, the hummingbird emoji exists! Its Unicode codepoint is:\n\n**U+1F99C**\n\nThis emoji was added in Unicode 12.0 (2019) and is represented as \ud83e\udd9c in most modern systems.",
+  "timestamp": 1774177087.9037848
+}

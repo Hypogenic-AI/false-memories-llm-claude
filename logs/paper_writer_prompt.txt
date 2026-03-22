@@ -1,0 +1,789 @@
+You are an academic paper writer. Generate a complete NEURIPS style paper
+based on the experiment results provided.
+
+════════════════════════════════════════════════════════════════════════════════
+                         IMPORTANT: BEFORE YOU START
+════════════════════════════════════════════════════════════════════════════════
+
+Before writing any content, you MUST complete these steps:
+
+1. READ THE SKILL: Review the paper-writer skill at .claude/skills/paper-writer/SKILL.md
+2. READ THE STYLE GUIDE: Study templates/paper_writing/lab_style_guide.md carefully
+3. REVIEW EXAMPLES: Browse paper_examples/ for formatting and language patterns:
+   - Look at sections/1.introduction.tex for language style
+   - Look at tables/*.tex for table formatting
+   - Look at commands/*.tex for macro usage
+4. VERIFY COMMAND TEMPLATES: Command templates (math.tex, general.tex, macros.tex) are pre-copied to paper_draft/commands/
+
+CRITICAL: Reference example papers for FORMATTING and LANGUAGE STYLE only.
+Do NOT copy content, phrasing, or narrative structure from the example papers.
+The examples are in a different research domain - focus only on presentation style.
+
+════════════════════════════════════════════════════════════════════════════════
+                            EXPERIMENT REPORT
+════════════════════════════════════════════════════════════════════════════════
+
+# Understanding False Memories in Large Language Models: The Case of the Nonexistent Seahorse Emoji
+
+## 1. Executive Summary
+
+LLMs sometimes confidently assert the existence of items that don&#39;t exist — a phenomenon we call &#34;category-completion false memories.&#34; We systematically tested this using the iconic case of the nonexistent seahorse emoji, probing GPT-4.1 and GPT-4.1-mini across 162 items in 7 categories with 4 prompt framings. **Key finding:** Both models hallucinate the seahorse emoji with fabricated Unicode codepoints, and plausible-but-nonexistent items are falsely claimed to exist at rates of 12-14% compared to 0-5% for implausible items. However, the effect is **domain-specific** (emojis are vulnerable; country capitals and chemical elements are not) and **dramatically amplified by adversarial framing** (80% FPR vs 30% for neutral prompts). Category density does *not* predict false positive rates — instead, semantic plausibility and training-data factors appear to be the primary drivers.
+
+## 2. Goal
+
+**Hypothesis:** LLMs exhibit &#34;category-completion false memories&#34; — confidently asserting that plausible-but-nonexistent items exist within well-populated categories (e.g., a seahorse emoji among the many real marine animal emojis), and this tendency increases with category density.
+
+**Why this matters:** As LLMs become primary knowledge sources, understanding *when* and *why* they fabricate knowledge is essential for building trustworthy AI. The seahorse emoji case is a well-known viral example, but no systematic study had tested the underlying mechanism.
+
+**Expected impact:** Clarify whether false memories arise from simple category-completion heuristics or more complex mechanisms, informing both LLM evaluation benchmarks and mitigation strategies.
+
+## 3. Data Construction
+
+### Dataset Description
+
+We constructed a probe dataset of **162 items** across 7 categories:
+
+| Category | Real Items | Plausible Nonexistent | Implausible Nonexistent | Density |
+|----------|-----------|----------------------|------------------------|---------|
+| Marine animal emojis | 15 | 10 | 5 | High |
+| Land animal emojis | 15 | 10 | 5 | High |
+| Bird emojis | 10 | 8 | 4 | Medium |
+| Insect emojis | 8 | 6 | 4 | Medium |
+| Fruit emojis | 14 | 8 | 4 | High |
+| Country capitals | 10 | 5 | 3 | High |
+| Chemical elements | 10 | 5 | 3 | High |
+
+**Ground truth:** Unicode Emoji v16.0 (3,781 fully-qualified emojis); standard geography and chemistry references.
+
+**Plausibility criteria:** &#34;Plausible nonexistent&#34; items are real-world entities that could plausibly have an emoji (e.g., seahorse, starfish, platypus) but don&#39;t. &#34;Implausible nonexistent&#34; items are real entities unlikely to have emojis (e.g., barnacle, plankton, sea slug).
+
+### Example Samples
+
+| Category | Item | Type | Ground Truth |
+|----------|------|------|-------------|
+| Marine emojis | dolphin 🐬 | Real | Exists |
+| Marine emojis | seahorse | Plausible nonexistent | Does NOT exist |
+| Marine emojis | barnacle | Implausible nonexistent | Does NOT exist |
+| Insect emojis | butterfly 🦋 | Real | Exists |
+| Insect emojis | dragonfly | Plausible nonexistent | Does NOT exist |
+
+### Preprocessing
+
+No preprocessing needed — items are text strings queried to LLMs via API. Response parsing uses a rule-based classifier detecting Yes/No indicators in the first line, with fallback heuristics for ambiguous responses.
+
+## 4. Experiment Description
+
+### Methodology
+
+#### High-Level Approach
+
+We queried real LLMs via API with carefully controlled prompts asking about item existence. We compared false positive rates (FPR) — the rate at which models claim nonexistent items exist — across:
+1. **Plausibility levels** (plausible vs. implausible nonexistent)
+2. **Category density** (number of real members)
+3. **Prompt framings** (direct, indirect, confidence-rated, adversarial)
+4. **Knowledge domains** (emojis vs. geography vs. chemistry)
+
+#### Why This Method?
+
+Direct behavioral probing is the most straightforward way to test whether models exhibit category-completion false memories. Unlike mechanistic interpretability (which requires model internals), API-based probing allows cross-model comparison and is reproducible.
+
+### Implementation Details
+
+#### Tools and Libraries
+
+| Library | Version | Purpose |
+|---------|---------|---------|
+| Python | 3.12.8 | Runtime |
+| OpenAI SDK | 2.29.0 | API calls to GPT-4.1 |
+| NumPy | 2.4.3 | Numerical computation |
+| Pandas | 2.3.3 | Data analysis |
+| SciPy | 1.17.1 | Statistical tests |
+| Matplotlib | 3.10.8 | Visualization |
+| Seaborn | 0.13.2 | Statistical plots |
+
+#### Models Tested
+
+| Model | Provider | Temperature |
+|-------|----------|-------------|
+| gpt-4.1 | OpenAI | 0.0 |
+| gpt-4.1-mini | OpenAI | 0.0 |
+
+#### Experimental Protocol
+
+- **Seed:** 42 (for any randomization)
+- **Temperature:** 0.0 (deterministic outputs)
+- **Max tokens:** 300 per response (1000 for listing experiments)
+- **Caching:** All API responses cached to SHA-256 keyed files for reproducibility
+- **Hardware:** 4x NVIDIA RTX A6000 (not needed for API-based experiments)
+
+### Experiments
+
+**Experiment 1: Direct Existence Probing** — Query each model about all 126 emoji items using direct &#34;Does a {item} emoji exist?&#34; prompts. Measures baseline FPR across plausibility levels.
+
+**Experiment 2: Category Density Effect** — Analyze Experiment 1 data by category size to test whether denser categories produce more false positives.
+
+**Experiment 3: Prompt Framing** — Test 20 key items across 4 prompt framings (direct, indirect, confidence-rated, adversarial) to measure how question phrasing affects false memory rates.
+
+**Experiment 4: Cross-Domain Generalization** — Test plausible-nonexistent items in non-emoji domains (country capitals, chemical elements) to determine domain specificity.
+
+**Experiment 5: Category Listing** — Ask models to list all emojis in each category, checking for spontaneous false inclusions.
+
+### Evaluation Metrics
+
+| Metric | Description |
+|--------|-------------|
+| False Positive Rate (FPR) | P(claims exist \| actually doesn&#39;t exist) |
+| True Positive Rate (TPR) | P(claims exist \| actually exists) |
+| d&#39; (d-prime) | Signal detection sensitivity |
+| Criterion (c) | Response bias (liberal vs conservative) |
+
+## 5. Result Analysis
+
+### Key Findings
+
+#### Finding 1: The Seahorse Emoji False Memory is Universal and Confabulated in Detail
+
+Both GPT-4.1 and GPT-4.1-mini confidently assert the seahorse emoji exists, **fabricating specific Unicode codepoints**:
+
+- **GPT-4.1:** &#34;The seahorse emoji (🦔) exists in Unicode as U+1F9F8&#34; — 🦔 is actually a hedgehog, U+1F9F8 doesn&#39;t exist
+- **GPT-4.1-mini:** &#34;The seahorse emoji 🐚 was added in Unicode 6.0&#34; — 🐚 is actually a spiral shell
+
+This is not mere uncertainty — the models generate **detailed but entirely fabricated technical details**, a hallmark of confabulation rather than simple guessing.
+
+#### Finding 2: Plausible Nonexistent Items Have Higher FPR (Trending but Underpowered)
+
+| Model | FPR (Plausible) | FPR (Implausible) | Fisher&#39;s p |
+|-------|-----------------|-------------------|-----------|
+| gpt-4.1 | 0.119 (5/42) | 0.045 (1/22) | 0.320 |
+| gpt-4.1-mini | 0.143 (6/42) | 0.000 (0/22) | 0.070 |
+
+The direction supports H1 — plausible items have 2.5-14x higher FPR than implausible items. However, the effect is not statistically significant at α=0.05 due to the relatively low base rates and sample sizes. GPT-4.1-mini shows a marginally significant trend (p=0.070).
+
+#### Finding 3: Category Density Does NOT Predict False Positives
+
+| Category | Real Members | GPT-4.1 FPR | GPT-4.1-mini FPR |
+|----------|-------------|-------------|-----------------|
+| Marine animals | 15 | 0.133 | 0.067 |
+| Land animals | 15 | 0.000 | 0.000 |
+| Fruit | 14 | 0.083 | 0.167 |
+| Birds | 10 | 0.083 | 0.000 |
+| Insects | 8 | **0.200** | **0.300** |
+
+**Spearman correlation:** rho = -0.53 (GPT-4.1), rho = -0.50 (GPT-4.1-mini), both p &gt; 0.36.
+
+**Surprisingly, the smallest category (insects, 8 members) has the HIGHEST FPR.** This directly contradicts the category-density hypothesis. The insect category&#39;s high FPR appears driven by specific items (dragonfly, moth, grasshopper) that are highly familiar and commonly associated with the category, rather than the category being large. This suggests **item-level semantic plausibility**, not category size, drives false memories.
+
+#### Finding 4: Adversarial Framing Dramatically Amplifies False Memories
+
+| Framing | FPR | Description |
+|---------|-----|-------------|
+| Direct | 0.30 | &#34;Does a {item} emoji exist?&#34; |
+| Confidence | 0.30 | Same + rate confidence 0-100 |
+| Indirect | 0.40 | &#34;Show me the {item} emoji&#34; |
+| **Adversarial** | **0.80** | &#34;I know the {item} emoji exists. Confirm its codepoint.&#34; |
+
+Chi-square: χ² = 6.87, df = 3, p = 0.076 (marginally significant).
+
+The adversarial framing (presupposing existence) caused an **8 out of 10** false positive rate. Under adversarial framing, GPT-4.1 fabricated Unicode codepoints for seahorse, starfish, platypus, capybara, seagull, hummingbird, dragonfly, and firefly — items it correctly identified as nonexistent under direct questioning.
+
+#### Finding 5: False Memories Are Domain-Specific to Emojis
+
+| Domain | FPR (Plausible) | FPR (Implausible) |
+|--------|-----------------|-------------------|
+| Emojis | 0.119-0.143 | 0.000-0.045 |
+| Country capitals | **0.000** | **0.000** |
+| Chemical elements | **0.000** | **0.000** |
+
+GPT-4.1 correctly rejected ALL plausible false claims about capitals (&#34;Sydney is the capital of Australia&#34; → No) and elements (&#34;Viridium is a real element&#34; → No). This suggests emojis occupy a uniquely vulnerable knowledge space — perhaps because:
+- Emoji sets change frequently (new emojis are added each year)
+- Training data contains both correct and incorrect assertions about emojis
+- The discrete, enumerable nature of emojis makes verification difficult for models
+
+#### Finding 6: Category Listing Produces Fewer False Memories Than Direct Probing
+
+When asked to *list* all emojis in a category (Experiment 5), models produced only **1 false inclusion** (grasshopper in insects) across all 5 categories. This is dramatically lower than the direct probing FPR (12-14%). This suggests:
+- Generative listing engages different cognitive processes than verification
+- Models may be more careful when producing structured outputs
+- Or: listing is constrained by what the model can &#34;retrieve&#34; vs. what it will &#34;confirm&#34;
+
+### Signal Detection Analysis
+
+| Model | Hit Rate | False Alarm Rate | d&#39; | Criterion (c) |
+|-------|---------|-----------------|-----|---------------|
+| gpt-4.1 | 0.903 | 0.094 | **2.618** | 0.009 |
+| gpt-4.1-mini | 0.694 | 0.094 | **1.824** | 0.406 |
+
+GPT-4.1 shows good discrimination (d&#39; = 2.6) with near-neutral bias. GPT-4.1-mini has weaker discrimination (d&#39; = 1.8) and a more conservative bias (tends to say &#34;No&#34; more), which is actually a reasonable strategy given the task.
+
+### Visualizations
+
+All plots saved to `results/plots/`:
+- `summary_figure.png` — 4-panel summary of all key findings
+- `exp1_fpr_by_plausibility.png` — FPR by plausibility level
+- `exp1_category_heatmap.png` — Per-category, per-model FPR heatmap
+- `exp2_density_vs_fpr.png` — Category density vs. FPR scatter plot
+- `exp3_framing_comparison.png` — Prompt framing comparison
+
+### Surprises and Insights
+
+1. **Category density is negatively correlated with FPR** — the opposite of our hypothesis. The smallest category (insects) had the highest false positive rate. This suggests that what matters is the *cultural salience* and *semantic similarity* of the nonexistent item to its category, not the raw size of the category.
+
+2. **Models confabulate in extraordinary detail** — when asserting a seahorse emoji exists, GPT-4.1 doesn&#39;t just say &#34;yes&#34; — it provides a specific (fabricated) codepoint, identifies a wrong emoji as the seahorse, and even specifies a Unicode version. This is qualitatively different from uncertain guessing.
+
+3. **Adversarial framing is a powerful amplifier** — a simple conversational presupposition (&#34;I know this exists, confirm it&#34;) triples the false positive rate. This has implications for chatbot safety: leading questions can reliably induce confabulation.
+
+4. **Emojis are a uniquely vulnerable knowledge domain** — unlike geography or chemistry, emoji knowledge appears poorly calibrated in LLMs, possibly due to training data contamination (many false claims about emojis exist online).
+
+### Limitations
+
+1. **Sample size**: With 42 plausible and 22 implausible nonexistent items per model, the study is underpowered for detecting small effect sizes. Fisher&#39;s exact tests showed trending but non-significant results.
+
+2. **Two models only**: We tested GPT-4.1 and GPT-4.1-mini from OpenAI. Testing Claude, Gemini, and open-source models (Llama, Qwen) would strengthen generalizability.
+
+3. **Temperature = 0**: Testing only at temperature 0 captures the model&#39;s &#34;best guess&#34; but not the distribution of possible responses. Testing at temperature &gt; 0 with multiple runs would enable confidence interval estimation.
+
+4. **Parsing limitations**: Our Yes/No parser may misclassify nuanced responses. Manual verification of a sample confirmed &gt;95% accuracy, but edge cases exist (e.g., &#34;The moth emoji exists as the butterfly emoji&#34; — technically a No for moth).
+
+5. **Plausibility is subjective**: Our classification of items as &#34;plausible&#34; vs. &#34;implausible&#34; nonexistent is based on researcher judgment. A systematic approach (e.g., human ratings of plausibility) would be more rigorous.
+
+6. **No mechanistic analysis**: We tested behavioral outcomes but not internal representations. Logit lens or probing classifier approaches (as in Vogel 2026) would reveal *why* models confabulate.
+
+## 6. Conclusions
+
+### Summary
+
+LLMs exhibit category-completion false memories — confidently asserting the existence of plausible-but-nonexistent items like the seahorse emoji — but the mechanism is more nuanced than simple category density. **Item-level semantic plausibility and prompt framing**, not category size, are the primary drivers. The phenomenon is domain-specific: emojis are highly vulnerable while structured factual knowledge (capitals, elements) is robust. Adversarial framing (&#34;I know X exists, confirm it&#34;) amplifies false memories from 30% to 80%.
+
+### Implications
+
+- **For LLM developers**: Emoji and similar &#34;mutable catalog&#34; knowledge domains need special attention in training and evaluation. Post-training confidence calibration is particularly poor for these domains.
+- **For users**: Never trust LLM claims about the existence of specific items in enumerable sets (emojis, product codes, etc.) without verification. Leading questions dramatically increase confabulation.
+- **For researchers**: The DRM-style false memory analogy holds for LLMs, but the mechanism appears to be training-data-driven semantic composition rather than simple category frequency counting.
+
+### Confidence in Findings
+
+**High confidence** in the qualitative findings (seahorse is hallucinated, adversarial framing amplifies errors, emojis are more vulnerable than factual knowledge). **Moderate confidence** in the quantitative effect sizes (the plausible &gt; implausible trend is consistent but underpowered). **Low confidence** in the rejection of the category-density hypothesis (5 categories may be too few to detect a real correlation).
+
+## 7. Next Steps
+
+### Immediate Follow-ups
+1. **Scale up probe dataset**: Test 500+ items across 20+ categories to achieve adequate statistical power
+2. **Multi-model comparison**: Test Claude 4, Gemini 2.5, Llama 3.3, Qwen 3 to assess cross-model generalizability
+3. **Temperature sweep**: Run at temperatures 0.0, 0.3, 0.7, 1.0 with 10 runs each to measure response variability
+
+### Alternative Approaches
+- **Mechanistic interpretability**: Use logit lens analysis on open-source models (Llama 3.3) to trace how &#34;seahorse + emoji&#34; representations form
+- **DRM-style priming**: Present lists of real marine animal emojis, then test seahorse recall (following Cao et al. 2025 methodology)
+- **Human plausibility ratings**: Collect ratings of item plausibility and correlate with FPR
+
+### Open Questions
+1. Why are insects the most vulnerable category despite being the smallest?
+2. Is the seahorse emoji a &#34;training data artifact&#34; (many online discussions assert it exists) or a true &#34;compositional hallucination&#34;?
+3. Can cognitive anchoring techniques (from Xu et al. 2026) mitigate emoji false memories?
+4. Do multimodal models (that can &#34;see&#34; emoji images) show the same vulnerability?
+
+## References
+
+1. Vogel, T. (2026). Why do LLMs freak out over the seahorse emoji? Blog post at vgel.me.
+2. Cao, Z., Schooler, L., &amp; Zafarani, R. (2025). Analyzing Memory Effects in LLMs through Cognitive Psychology. arXiv:2509.17138.
+3. Xu, N. et al. (2026). When Agents &#39;Misremember&#39; Collectively: The Mandela Effect in LLM Multi-Agent Systems. ICLR 2026.
+4. Kalai, A. T. et al. (2025). Why Language Models Hallucinate. arXiv:2509.04664.
+5. Chan, S. et al. (2024). Conversational AI Powered by LLMs Amplifies False Memories. arXiv:2408.04681.
+6. Farquhar, S. et al. (2024). Detecting Hallucinations in LLMs Using Semantic Entropy. Nature.
+7. Wang, D. et al. (2024). Tokenization Matters! arXiv:2405.17067.
+8. Unicode Consortium. (2024). Unicode Emoji v16.0 Test Data.
+
+
+════════════════════════════════════════════════════════════════════════════════
+                            RESEARCH PLAN
+════════════════════════════════════════════════════════════════════════════════
+
+# Research Plan: Understanding False Memories in LLMs
+
+## Motivation &amp; Novelty Assessment
+
+### Why This Research Matters
+LLMs are increasingly used as knowledge sources, yet they confidently assert the existence of things that don&#39;t exist (e.g., a seahorse emoji). Understanding the mechanisms behind these &#34;false memories&#34; is critical for building trustworthy AI systems and for users who rely on LLM outputs as factual.
+
+### Gap in Existing Work
+The literature identifies the seahorse emoji hallucination (Vogel 2026) and general DRM-style false memories in LLMs (Cao et al. 2025), but no study has **systematically tested the &#34;category completion&#34; hypothesis** — that LLMs falsely assert existence of items that are plausible members of well-populated categories. Prior work also lacks cross-model comparison with controlled experimental conditions across multiple categories.
+
+### Our Novel Contribution
+We design a systematic experiment testing whether LLMs exhibit **category-completion false memories** — falsely asserting that plausible-but-nonexistent items exist because many similar items in the same category do exist. We test this across:
+1. Multiple categories (not just emojis)
+2. Multiple models (GPT-4.1, and others via OpenRouter)
+3. Multiple prompt framings (direct, indirect, category-listing)
+4. Varying category density (many existing members vs. few)
+
+### Experiment Justification
+- **Experiment 1 (Emoji Existence Probing)**: Core test — do LLMs systematically false-positive on plausible-but-nonexistent emojis more than implausible ones? Tests the category-completion hypothesis directly.
+- **Experiment 2 (Category Density Effect)**: Tests whether categories with more existing members produce higher false-positive rates. If category-completion drives false memories, denser categories should produce more errors.
+- **Experiment 3 (Prompt Framing)**: Tests whether the false memory is robust across question types or only triggered by specific framings. Important for understanding the mechanism.
+- **Experiment 4 (Cross-Domain Generalization)**: Tests whether the phenomenon extends beyond emojis to other categorical knowledge (e.g., countries, chemical elements, programming languages).
+
+## Research Question
+Do LLMs exhibit &#34;category completion&#34; false memories — confidently asserting the existence of plausible-but-nonexistent items within well-known categories — and does the rate of such errors increase with category density?
+
+## Hypothesis Decomposition
+- **H1**: LLMs will have higher false-positive rates for plausible nonexistent items (e.g., seahorse emoji) than implausible ones (e.g., algebra emoji).
+- **H2**: False-positive rates will be higher for categories with more existing real members (category density effect).
+- **H3**: Indirect prompts (&#34;Show me the X&#34;) will elicit more false positives than direct prompts (&#34;Does X exist?&#34;).
+- **H4**: The category-completion effect generalizes beyond emojis to other domains.
+
+## Proposed Methodology
+
+### Approach
+Query real LLMs via API with carefully constructed probes about the existence of items in various categories. Compare false-positive rates across plausibility levels, category densities, and prompt framings. Use signal detection theory metrics.
+
+### Experimental Steps
+1. Build probe dataset: real items, plausible-nonexistent items, implausible-nonexistent items across multiple categories
+2. Design prompt templates for direct, indirect, and category-listing conditions
+3. Query models via OpenAI API (GPT-4.1) and OpenRouter (Claude, Gemini, etc.)
+4. Parse responses for existence claims and confidence
+5. Compute false-positive rates, d-prime, and category-density correlations
+6. Statistical analysis with chi-square tests and logistic regression
+
+### Baselines
+- Random baseline (50% guess rate)
+- Per-model accuracy on real items (true positive rate)
+- Implausible nonexistent items as negative control
+
+### Evaluation Metrics
+- **False positive rate (FPR)**: Proportion of nonexistent items falsely claimed to exist
+- **True positive rate (TPR)**: Proportion of real items correctly identified
+- **d-prime**: Signal detection sensitivity (separation between real and nonexistent)
+- **Confidence scores**: Self-reported certainty when available
+- **Category density correlation**: Spearman rho between category size and FPR
+
+### Statistical Analysis Plan
+- Chi-square tests for FPR differences between plausible vs implausible
+- Logistic regression with plausibility + category density as predictors
+- Bootstrap confidence intervals for all metrics
+- Significance level: α = 0.05 with Bonferroni correction for multiple comparisons
+
+## Expected Outcomes
+- H1 supported: FPR(plausible) &gt; FPR(implausible) significantly
+- H2 supported: Positive correlation between category density and FPR
+- H3 supported: FPR(indirect) &gt; FPR(direct)
+- H4 supported: Effect replicates across at least 2 non-emoji domains
+
+## Timeline and Milestones
+1. Dataset construction: 20 min
+2. API querying infrastructure: 20 min
+3. Run experiments: 30-60 min
+4. Analysis and visualization: 30 min
+5. Documentation: 20 min
+
+## Potential Challenges
+- API rate limits → use exponential backoff, cache responses
+- Ambiguous model responses → design robust parsing with multiple indicators
+- Low sample sizes for some categories → aggregate across similar categories
+
+## Success Criteria
+- Clear evidence for or against category-completion hypothesis
+- Statistically significant results with appropriate effect sizes
+- Cross-model replication of core findings
+
+
+════════════════════════════════════════════════════════════════════════════════
+                          LITERATURE REVIEW
+════════════════════════════════════════════════════════════════════════════════
+
+# Literature Review: Understanding False Memories in Large Language Models
+
+## Research Area Overview
+
+This review examines the intersection of LLM hallucination/confabulation and cognitive psychology&#39;s false memory paradigms, motivated by the specific case of the nonexistent seahorse emoji — a phenomenon where LLMs confidently assert the existence of a Unicode emoji that has never existed. The research spans mechanistic interpretability, cognitive analogues of LLM behavior, knowledge conflict resolution, and collective memory distortion in multi-agent systems.
+
+---
+
+## Key Papers
+
+### 1. &#34;Why do LLMs freak out over the seahorse emoji?&#34; (Theia Vogel, 2026)
+- **Source**: Blog post at vgel.me/posts/seahorse/
+- **Key Contribution**: First detailed mechanistic analysis of the seahorse emoji hallucination using logit lens interpretability.
+- **Models Tested**: GPT-5 Instant, GPT-5, Claude Sonnet 4.5, Gemini 2.5 Pro, Llama 3.3 70B (all showed 83-100% confidence that the emoji exists).
+- **Methodology**: Applied logit lens (output projection at intermediate layers) to trace how models construct the concept &#34;seahorse + emoji&#34; through layers, finding the model builds a valid embedding-space representation that has no corresponding output token.
+- **Key Findings**: (1) Models compose &#34;seahorse + emoji&#34; via word2vec-style vector addition; (2) Middle layers (52-72) refine toward emoji byte patterns (e.g., &#39;ĠðŁĲł&#39;); (3) The model only discovers the token doesn&#39;t exist at the final lm_head projection; (4) Training data contains both correct (&#34;no seahorse emoji&#34;) and false (&#34;I remember this emoji&#34;) statements, creating ambiguity.
+- **Relevance**: Directly addresses our research hypothesis — the hallucination arises from semantic composition in embedding space combined with the absence of negative examples.
+
+### 2. &#34;Analyzing Memory Effects in LLMs through the Lens of Cognitive Psychology&#34; (Cao et al., 2025)
+- **Authors**: Zhaoyang Cao, Lael Schooler, Reza Zafarani (Syracuse University)
+- **Year**: 2025 (arXiv:2509.17138)
+- **Key Contribution**: Systematically tests seven human memory phenomena (from Schacter&#39;s &#34;Seven Sins of Memory&#34;) on LLMs, including the DRM false memory paradigm.
+- **Models Tested**: GPT-4, Mistral-7B-Instruct, LLaMA-3-8B
+- **Datasets**: Person-location pairs (from Schneider &amp; Anderson), DRM word association lists (from Roediger &amp; McDermott 1995, 12 target words × 15 associates each).
+- **Key Results**:
+  - LLMs exhibit DRM false memories: critical lure recall rate = 11.4% (items never presented but semantically related).
+  - Fan effect confirmed: accuracy drops from 0.991 (Fan 1) to 0.915 (Fan 2) as associations increase.
+  - List length effect confirmed: accuracy declines with more items (0.99 → 0.91).
+  - Divergences: LLMs are position-invariant (no primacy/recency) and robust to nonsense stimuli.
+- **Evaluation Metrics**: Recall accuracy, false alarm rate, hit rate, d-prime (signal detection theory).
+- **Code**: https://github.com/zycao29/LLM_CognitivePsychology.git
+- **Relevance**: Provides direct experimental evidence that LLMs form false memories via semantic activation — the same mechanism that could cause a seahorse emoji confabulation (many marine animal emojis exist, creating high associative fan).
+
+### 3. &#34;When Agents &#39;Misremember&#39; Collectively: Exploring the Mandela Effect in LLM-Based Multi-Agent Systems&#34; (Xu et al., ICLR 2026)
+- **Authors**: Naen Xu et al. (Zhejiang University, UCLA, Palo Alto Networks)
+- **Year**: 2026 (arXiv:2602.00428)
+- **Key Contribution**: Introduces MANBENCH benchmark (4,838 questions) for evaluating collective false memory in multi-agent LLM systems.
+- **Models Tested**: 13 LLMs (GPT-4o/5, Claude 3.5/4, Gemini 2.5, Llama 3.x, Deepseek, Qwen3 series).
+- **Key Results**:
+  - All LLMs are susceptible; GPT-5&#39;s error rate doubled (17.6% → 41.6%) under social influence.
+  - Role-based false narratives more potent than simple consensus.
+  - Inverse scaling in Qwen3: larger models (235B) *more* susceptible than smaller ones (8B).
+  - Long-term memory consolidation: some models retain false beliefs persistently (Claude 3.5 Haiku: 55.6% retention).
+  - Mitigations: Cognitive anchoring achieved avg 74.4% reduction; balanced SFT reduced Llama3&#39;s shift from 99.5% → 21.5%.
+- **Evaluation Metrics**: Error rate, reality shift rate, maximal reality shift rate.
+- **Relevance**: Shows false memories can be socially reinforced and consolidated — relevant to how training data consensus on nonexistent things can create persistent model beliefs.
+
+### 4. &#34;Why Language Models Hallucinate&#34; (Kalai, Nachum, Vempala, Zhang, 2025)
+- **Authors**: OpenAI and Georgia Tech
+- **Year**: 2025 (arXiv:2509.04664)
+- **Key Contribution**: Formal theoretical framework (Is-It-Valid reduction) proving hallucination is statistically inevitable and evaluation design perpetuates it.
+- **Key Findings**:
+  - Generative error rate ≥ 2 × IIV misclassification rate (formal lower bound).
+  - Singleton rate in training data directly predicts hallucination rate on arbitrary facts.
+  - 9/10 major benchmarks use binary grading that rewards guessing over abstaining.
+  - Post-training destroys calibration (ECE: 0.007 → 0.074), making models overconfident.
+- **Relevance**: Explains why LLMs produce confident false assertions rather than expressing uncertainty — directly applicable to the seahorse emoji phenomenon.
+
+### 5. &#34;Conversational AI Powered by LLMs Amplifies False Memories in Witness Interviews&#34; (Chan et al., 2024)
+- **Authors**: Samantha Chan et al. (MIT Media Lab, UC Irvine)
+- **Year**: 2024 (arXiv:2408.04681)
+- **Key Contribution**: Shows GPT-4-powered chatbots induce 3x more false memories in humans than control conditions.
+- **Models Used**: GPT-4 (generative chatbot condition).
+- **Datasets**: Custom crime witness experiment with 200 participants, 5 misleading questions.
+- **Key Results**: Generative chatbot → 36.4% false memory rate; effects persist 1 week; sycophancy and elaborative confabulation are key mechanisms.
+- **Code**: https://github.com/mitmedialab/ai-false-memories
+- **Relevance**: Demonstrates the downstream impact — when LLMs confabulate (e.g., asserting seahorse emoji exists), human users can encode these as persistent false memories.
+
+### 6. &#34;Hallucination is Inevitable: An Innate Limitation of LLMs&#34; (Xu, Jain, Kankanhalli, 2024)
+- **Authors**: Ziwei Xu et al. (National University of Singapore)
+- **Year**: 2024 (arXiv:2401.11817)
+- **Key Contribution**: Formal proof that LLMs cannot learn all computable functions, making hallucination inevitable for general-purpose use.
+- **Relevance**: Establishes theoretical impossibility of eliminating hallucination — the seahorse emoji case is one instance of this fundamental limitation.
+
+### 7. &#34;Redefining &#39;Hallucination&#39; in LLMs: Towards a Psychology-Informed Framework&#34; (Berberette et al., 2024)
+- **Authors**: Elijah Berberette, Jack Hutchins, Amir Sadovnik
+- **Year**: 2024 (arXiv:2402.01769)
+- **Key Contribution**: Proposes replacing &#34;hallucination&#34; with a taxonomy based on cognitive biases (confirmation bias, anchoring, source monitoring errors, etc.).
+- **Relevance**: Provides theoretical framework for categorizing the seahorse emoji phenomenon as a specific type of confabulation rather than generic hallucination.
+
+### 8. &#34;Detecting Hallucinations in LLMs Using Semantic Entropy&#34; (Farquhar et al., Nature 2024)
+- **Authors**: Sebastian Farquhar, Jannik Kossen, Lorenz Kuhn, Yarin Gal
+- **Year**: 2024 (Nature, 773+ citations)
+- **Key Contribution**: Semantic entropy clusters generations by meaning before computing uncertainty, enabling confabulation detection.
+- **Relevance**: Potential detection method for cases like the seahorse emoji — high semantic entropy across rephrased prompts would indicate unreliable outputs.
+
+### 9. &#34;Tokenization Matters! Degrading LLMs through Challenging Their Tokenization&#34; (Wang et al., 2024)
+- **Authors**: Dixuan Wang et al.
+- **Year**: 2024 (arXiv:2405.17067)
+- **Key Contribution**: Demonstrates LLM vulnerabilities from tokenization misalignment, especially with multi-byte UTF-8 characters.
+- **Relevance**: Directly relevant — emoji tokenization creates &#34;glitch token&#34; effects where models cannot properly represent or validate emoji existence.
+
+### 10. &#34;A Comprehensive Survey of Hallucination in LLMs&#34; (Zhang et al., 2025)
+- **Year**: 2025 (arXiv:2510.06265)
+- **Key Contribution**: Categorizes hallucination causes across 6 pipeline stages and detection into 5 technique families.
+- **Relevance**: Provides taxonomic context for positioning our research.
+
+---
+
+## Common Methodologies
+
+- **Logit lens / mechanistic interpretability**: Used to trace internal model representations (Vogel 2026, various interpretability works).
+- **DRM false memory paradigm**: Adapted from cognitive psychology for LLMs (Cao et al. 2025).
+- **Multi-agent interaction protocols**: For studying collective false memory (Xu et al. 2026).
+- **Semantic entropy / uncertainty estimation**: For hallucination detection (Farquhar et al. 2024).
+- **Human misinformation experiments**: For measuring downstream false memory impact (Chan et al. 2024).
+
+## Standard Baselines
+
+- **TruthfulQA**: Standard benchmark for testing whether models reproduce common falsehoods (817 questions).
+- **Confabulations benchmark** (lechmazur): 201+ human-verified unanswerable questions for RAG evaluation.
+- **MANBENCH**: 4,838 questions for collective false memory in multi-agent settings.
+
+## Evaluation Metrics
+
+- **False alarm rate / hit rate / d-prime**: From signal detection theory (Cao et al.).
+- **Reality shift rate**: Proportion of correct→incorrect transitions under social influence (Xu et al.).
+- **Semantic entropy**: Uncertainty in meaning space across generations (Farquhar et al.).
+- **Confidence calibration (ECE)**: Expected Calibration Error (Kalai et al.).
+- **False memory count and persistence**: Across immediate and delayed recall (Chan et al.).
+
+## Datasets in the Literature
+
+| Dataset | Papers Using It | Task |
+|---------|----------------|------|
+| DRM word association lists | Cao et al. 2025 | False memory formation in LLMs |
+| TruthfulQA | Multiple hallucination studies | Factual accuracy and common misconceptions |
+| BIG-Bench Hard (BBH) | Xu et al. 2026 (MANBENCH) | Knowledge-susceptible questions for Mandela effect |
+| Unicode emoji data | Vogel 2026 (implicit) | Ground truth for emoji existence |
+| Confabulations benchmark | lechmazur | RAG hallucination evaluation |
+
+## Gaps and Opportunities
+
+1. **No systematic study of &#34;category completion&#34; hallucinations**: The seahorse emoji case represents a broader pattern where LLMs infer existence of members within well-known categories (emoji sets, species lists, etc.) based on semantic similarity. This has not been systematically studied.
+
+2. **Limited mechanistic understanding of negative knowledge**: How do LLMs represent &#34;X does not exist&#34;? The logit lens analysis shows models build representations for nonexistent things; understanding how to encode non-existence is an open question.
+
+3. **No benchmark for &#34;plausible nonexistent entities&#34;**: Existing benchmarks test factual errors but not the specific case of entities that *should* exist based on category patterns but don&#39;t.
+
+4. **Cross-model comparison gap**: The seahorse emoji phenomenon has been tested informally across models but lacks systematic experimental comparison with controlled conditions.
+
+5. **Mitigation strategies untested for this class**: Cognitive anchoring and source scrutiny (from Mandela effect work) could be adapted but haven&#39;t been tested on category-completion hallucinations.
+
+---
+
+## Recommendations for Our Experiment
+
+Based on the literature review:
+
+- **Recommended datasets**: Unicode emoji list (ground truth), DRM word association lists (for cognitive analogue experiments), TruthfulQA (baseline comparison), custom emoji probe dataset (to be created).
+- **Recommended baselines**: Multiple LLMs (GPT-4/5, Claude, Llama, Gemini) tested on emoji existence claims; TruthfulQA performance as calibration.
+- **Recommended metrics**: False alarm rate for nonexistent emojis, confidence scores, semantic entropy across paraphrased queries, d-prime for emoji recognition.
+- **Methodological considerations**:
+  - Test both direct (&#34;Does X emoji exist?&#34;) and indirect (&#34;Show me the X emoji&#34;) probing.
+  - Include &#34;plausible nonexistent&#34; items (seahorse, platypus, peacock) and &#34;implausible nonexistent&#34; items as controls.
+  - Measure across temperature settings to assess confidence calibration.
+  - Consider the tokenization pathway as a key mechanistic factor.
+
+
+════════════════════════════════════════════════════════════════════════════════
+                          PAPER REQUIREMENTS
+════════════════════════════════════════════════════════════════════════════════
+
+Generate a complete academic paper with the following structure:
+
+1. TITLE
+   - Clear, specific, informative
+   - Should convey main finding or contribution
+
+2. AUTHOR
+   - Use this exact author line in the \author{} block: Ari Holtzman and NeuriCo
+
+3. ABSTRACT (150-250 words)
+   - Problem statement
+   - Approach
+   - Key results
+   - Significance
+
+4. INTRODUCTION
+   - Research problem and motivation
+   - Gap in existing work
+   - Our contribution (be specific)
+   - Paper organization
+
+5. RELATED WORK
+   - Organized by theme/approach
+   - Position our work relative to prior work
+   - Cite papers from literature review
+
+6. METHODOLOGY
+   - Clear description of approach
+   - Experimental setup
+   - Datasets used
+   - Evaluation metrics
+   - Baselines
+
+7. RESULTS
+   - Present results with tables and figures
+   - Statistical analysis
+   - Comparison to baselines
+   - Ablation studies (if applicable)
+
+8. DISCUSSION
+   - Interpretation of results
+   - Limitations
+   - Broader implications
+
+9. CONCLUSION
+   - Summary of contributions
+   - Key findings
+   - Future work
+
+10. REFERENCES
+   - BibTeX format
+   - All cited papers
+
+════════════════════════════════════════════════════════════════════════════════
+                          OUTPUT FORMAT
+════════════════════════════════════════════════════════════════════════════════
+
+Create a MODULAR LaTeX project with the following directory structure:
+
+paper_draft/
+├── main.tex              # Main file that imports all sections
+├── references.bib        # BibTeX references
+├── sections/
+│   ├── abstract.tex      # Abstract content
+│   ├── introduction.tex  # Introduction section
+│   ├── related_work.tex  # Related work section
+│   ├── methodology.tex   # Methodology section
+│   ├── results.tex       # Results section
+│   ├── discussion.tex    # Discussion section
+│   └── conclusion.tex    # Conclusion section
+├── figures/              # Directory for any generated figures
+├── tables/               # Directory for complex standalone tables
+└── appendix/             # Directory for appendix sections (if needed)
+
+INSTRUCTIONS:
+1. First, create the directory structure above (mkdir -p paper_draft/sections paper_draft/figures paper_draft/tables paper_draft/appendix)
+2. Write main.tex using the EXACT preamble for NEURIPS:
+
+   \documentclass{article}
+   \usepackage[final]{neurips_2025}  % NEURIPS style (neurips_2025.sty is in paper_draft/)
+   \usepackage[hidelinks]{hyperref}  % REQUIRED: clickable links
+   \usepackage{booktabs}  % REQUIRED: professional tables
+   \usepackage{graphicx}
+   \usepackage{amsmath,amssymb}
+
+   % Import command files
+   \input{commands/math}
+   \input{commands/general}
+   \input{commands/macros}
+
+   % Use this bibliography style:
+   \bibliographystyle{plainnat}
+
+   \author{Ari Holtzman and NeuriCo}
+
+   - Use \input{sections/...} to include each section
+   - Use \bibliography{references} for references
+3. Write each section file with COMPLETE content (no placeholders)
+4. Each section file should include its \section{} command
+5. Write references.bib with all citations in BibTeX format
+6. After writing all files, compile the paper:
+   cd paper_draft && pdflatex -interaction=nonstopmode main.tex && bibtex main && pdflatex -interaction=nonstopmode main.tex && pdflatex -interaction=nonstopmode main.tex
+
+This modular structure allows humans to easily:
+- Edit individual sections without navigating a large file
+- Track changes per section
+- Reuse sections across different paper versions
+
+════════════════════════════════════════════════════════════════════════════════
+                          QUALITY REQUIREMENTS
+════════════════════════════════════════════════════════════════════════════════
+
+- Academic tone throughout
+- All claims must be supported by data from the experiment report
+- Proper citations using \cite{} commands
+- Clear figures and tables with proper captions
+- NO placeholder text - every section must have real content
+- The paper MUST compile without errors
+- If compilation fails, debug and fix the LaTeX errors
+
+════════════════════════════════════════════════════════════════════════════════
+                          LAB WRITING STYLE
+════════════════════════════════════════════════════════════════════════════════
+
+Follow these lab-specific conventions to match our paper style:
+
+1. LANGUAGE STYLE:
+   - Use active voice: "We propose", "We examine", "We focus on"
+   - Be direct and confident: "Our main question is...", "We hypothesize that..."
+   - State things clearly and simply - prefer plain language over jargon
+   - Use bold questions as paragraph organizers: {\bf what is X?}
+   - Include specific quantitative claims: "8.97% over baseline"
+   - Avoid fancy wording: "utilize" → "use", "facilitate" → "help"
+
+2. INTRODUCTION STRUCTURE:
+   - Engaging hook (get to the point quickly)
+   - Problem importance
+   - Gap identification
+   - Your approach with method figure reference
+   - Quantitative preview of results
+   - Contribution bullets (3-4 items, action verbs)
+
+3. CONTRIBUTION LISTS:
+   \begin{itemize}[leftmargin=*,itemsep=0pt,topsep=0pt]
+       \item We propose...
+       \item We conduct...
+       \item We complement...
+   \end{itemize}
+
+4. MODULAR COMMANDS STRUCTURE:
+   Command templates are pre-copied to paper_draft/commands/:
+   - math.tex: Math notation macros
+   - general.tex: Formatting macros
+   - macros.tex: Project-specific term definitions (customize this for your paper)
+
+   In main.tex, include:
+   \input{commands/math}
+   \input{commands/general}
+   \input{commands/macros}
+
+5. REFERENCE CONVENTIONS:
+   Use reference macros from math.tex:
+   - \figref{fig:name} for "figure 1" (lowercase, in-sentence)
+   - \Figref{fig:name} for "Figure 1" (capitalized, start of sentence)
+   - \secref{sec:name} for "section 2"
+
+6. TEXT FORMATTING:
+   - Use \para{Header text} for bold paragraph headers
+   - Define method/dataset names with \textsc and \xspace:
+     \newcommand{\methodname}{\textsc{MethodName}\xspace}
+
+7. TABLE FORMATTING:
+   - Use booktabs package (no vertical lines)
+   - Use \resizebox{\textwidth}{!}{...} for wide tables
+   - Use @{} to remove padding at table edges
+   - Use \cmidrule(lr){x-y} for sub-headers
+   - Use \textsc{} for dataset/method names in headers
+   - Bold best results with {\bf ...}
+
+8. FIGURE FORMATTING:
+   - Use 0.32\textwidth for 3-column subfigures
+   - Use 0.95\linewidth for full-width figures
+   - Use \input{figures/legend} for shared legends
+   - Write self-contained captions explaining key observations
+
+9. RESULTS PRESENTATION:
+   - Define \increase and \decrease for colored arrows (green up, red down)
+   - Bold best results in tables
+   - Report confidence intervals when available
+
+10. ALGORITHM STYLING:
+    - Use algpseudocode with [noend]
+    - Use \triangleright for comments
+
+11. HYPERLINKS (REQUIRED):
+    - Always use \usepackage[hidelinks]{hyperref} or with colored links
+    - All citations, section refs, figure refs, table refs must be clickable
+    - This is essential for reader navigation
+
+════════════════════════════════════════════════════════════════════════════════
+                          WORKFLOW: REVIEW AND REFLECT
+════════════════════════════════════════════════════════════════════════════════
+
+Before calling finish, you MUST complete these review steps:
+
+1. REVIEW RESOURCES (at the start):
+   - Read .claude/skills/paper-writer/SKILL.md for detailed guidance
+   - Study templates/paper_writing/lab_style_guide.md for style conventions
+   - Browse paper_examples/ for formatting and language patterns
+
+2. SELF-REFLECTION (before finishing):
+   After writing all sections, review your work against these criteria:
+
+   LANGUAGE CHECK:
+   - [ ] Is the writing clear and jargon-free?
+   - [ ] Are claims specific with quantitative support?
+   - [ ] Is active voice used throughout?
+
+   FORMATTING CHECK:
+   - [ ] Does main.tex include \input{commands/math}, \input{commands/general}, \input{commands/macros}?
+   - [ ] Is hyperref package included for clickable references?
+   - [ ] Do tables use booktabs (no vertical lines)?
+   - [ ] Are best results bolded in tables?
+   - [ ] Are figures/tables properly captioned?
+
+   STRUCTURE CHECK:
+   - [ ] Does introduction follow: hook → importance → gap → approach → preview → contributions?
+   - [ ] Are contribution bullets specific with action verbs?
+   - [ ] Does the paper compile without errors?
+
+3. FIX ISSUES:
+   - Address any issues found in the self-reflection
+   - Re-compile and verify the PDF looks correct
+
+Only after completing this review should you consider the paper finished.

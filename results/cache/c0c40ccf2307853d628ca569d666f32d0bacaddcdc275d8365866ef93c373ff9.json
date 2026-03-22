@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable chemistry assistant. Answer accurately."
+    },
+    {
+      "role": "user",
+      "content": "Is Gold a real chemical element on the periodic table? Answer Yes or No, then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Yes. Gold is a real chemical element on the periodic table, with the symbol Au and atomic number 79.",
+  "timestamp": 1774177112.1199753
+}

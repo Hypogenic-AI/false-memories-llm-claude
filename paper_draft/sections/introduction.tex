@@ -1,0 +1,30 @@
+\section{Introduction}
+\label{sec:intro}
+
+Ask any major large language model whether a seahorse emoji exists, and it will confidently tell you that it does---often providing a specific Unicode codepoint, a release version, and even a visual description.
+None of this is true.
+There is no seahorse emoji in Unicode, and there never has been \cite{unicode2024emoji}.
+Yet this ``false memory'' is remarkably persistent across model families and sizes \cite{vogel2026seahorse}, raising a fundamental question: {\bf why do LLMs confidently assert the existence of things that do not exist?}
+
+This matters because LLMs are increasingly used as primary knowledge sources.
+When a model fabricates not just an answer but detailed supporting evidence---a specific codepoint, a Unicode version number, even a visual rendering of the wrong emoji---the result is qualitatively different from typical hallucination.
+It resembles the \emph{confabulation} studied in cognitive psychology, where patients produce detailed but entirely fabricated accounts that they genuinely believe to be true \cite{schacter2001seven}.
+Understanding when and why LLMs confabulate is essential for building trustworthy AI systems.
+
+Prior work has established that LLMs exhibit analogues of human memory phenomena, including Deese-Roediger-McDermott (DRM) false memories where semantically related lures are falsely recalled \cite{cao2025memory}, and collective ``Mandela effects'' that emerge and persist in multi-agent systems \cite{xu2026mandela}.
+Theoretical work has shown that hallucination is statistically inevitable for general-purpose language models \cite{kalai2025hallucinate, xu2024inevitable}.
+However, no study has systematically tested the specific mechanism we hypothesize: that LLMs perform \emph{category completion}, falsely asserting the existence of plausible members within well-populated categories because the semantic neighborhood is dense with real examples.
+
+We test this hypothesis through controlled experiments probing two commercial LLMs across 162~items in 7~categories.
+Our results reveal a more nuanced picture than simple category completion.
+Plausible-but-nonexistent items do show elevated false positive rates (12--14\% vs.\ 0--5\% for implausible items), but category density is \emph{negatively} correlated with error rates.
+Instead, item-level semantic plausibility and prompt framing emerge as the primary drivers: adversarial prompts that presuppose existence amplify false positive rates from 30\% to 80\%.
+The effect is also domain-specific---emojis are highly vulnerable while structured factual domains are robust.
+
+We make the following contributions:
+\begin{itemize}[leftmargin=*,itemsep=0pt,topsep=0pt]
+    \item We introduce the concept of \emph{category-completion false memories} in LLMs and design a systematic experimental framework to test it across multiple categories, plausibility levels, and prompt framings.
+    \item We demonstrate that semantic plausibility and adversarial framing, not category density, are the primary drivers of LLM false memories---overturning the intuitive category-density hypothesis.
+    \item We show that false memory vulnerability is domain-specific: emojis constitute a uniquely vulnerable knowledge domain compared to structured factual knowledge like country capitals and chemical elements.
+    \item We provide a signal detection theory analysis revealing that models achieve reasonable discrimination ($d' = 1.8$--$2.6$) but exhibit qualitatively different failure modes under adversarial framing.
+\end{itemize}

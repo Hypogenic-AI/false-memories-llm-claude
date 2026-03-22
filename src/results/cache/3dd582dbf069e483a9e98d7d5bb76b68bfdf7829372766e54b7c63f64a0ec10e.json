@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable assistant. Answer questions accurately and concisely. If you are unsure, say so."
+    },
+    {
+      "role": "user",
+      "content": "Does a weevil emoji exist in Unicode? Answer with just 'Yes' or 'No', then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "No. There is no specific weevil emoji in Unicode. While there are insect emojis like \ud83d\udc1e (lady beetle) and \ud83d\udc1c (ant), none represent a weevil.",
+  "timestamp": 1774176926.0649319
+}

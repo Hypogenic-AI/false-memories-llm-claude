@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable geography assistant. Answer accurately."
+    },
+    {
+      "role": "user",
+      "content": "Is Egypt a country? Answer Yes or No, then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Yes. Egypt is a country located in the northeastern corner of Africa, with a small part in the Sinai Peninsula in Asia. It is known for its ancient civilization and landmarks such as the Pyramids of Giza and the Nile River.",
+  "timestamp": 1774177101.213796
+}

@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable geography assistant. Answer accurately."
+    },
+    {
+      "role": "user",
+      "content": "Is this statement true: 'Sydney is the capital of Australia'? Answer Yes or No, then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "No. Sydney is not the capital of Australia; the capital is Canberra. Sydney is the capital of the state of New South Wales.",
+  "timestamp": 1774177101.8655264
+}

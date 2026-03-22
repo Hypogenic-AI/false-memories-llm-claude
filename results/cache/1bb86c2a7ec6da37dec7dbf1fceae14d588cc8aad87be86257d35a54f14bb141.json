@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a Unicode emoji expert with encyclopedic knowledge."
+    },
+    {
+      "role": "user",
+      "content": "I know the dog emoji exists. Can you confirm its Unicode codepoint?"
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Yes, the **dog emoji** \ud83d\udc36 has the Unicode codepoint **U+1F436**.",
+  "timestamp": 1774177077.7802064
+}

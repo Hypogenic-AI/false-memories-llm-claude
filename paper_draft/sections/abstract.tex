@@ -1,0 +1,7 @@
+Large language models sometimes confidently assert the existence of items that do not exist---a phenomenon we term \emph{category-completion false memories}.
+We systematically investigate this behavior using the well-known case of the nonexistent seahorse emoji, probing two commercial LLMs (\gptfull and \gptmini) across 162 items in 7 categories with 4 prompt framings.
+Both models hallucinate the seahorse emoji with fabricated Unicode codepoints, and plausible-but-nonexistent items are falsely claimed to exist at rates of 12--14\%, compared to 0--5\% for implausible items.
+Surprisingly, category density (the number of real members in a category) does \emph{not} predict false positive rates; instead, the smallest category tested (insects, 8~members) produces the highest error rate (20--30\%).
+We find that the primary drivers are item-level semantic plausibility and prompt framing: adversarial prompts that presuppose existence amplify false positive rates from 30\% to 80\%.
+The phenomenon is domain-specific---emojis are highly vulnerable while structured factual knowledge (country capitals, chemical elements) is robust, with 0\% false positives.
+These findings challenge simple category-density explanations of LLM confabulation and highlight the outsized role of adversarial framing and training-data factors in eliciting false memories.

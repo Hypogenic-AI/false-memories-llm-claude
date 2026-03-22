@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable chemistry assistant. Answer accurately."
+    },
+    {
+      "role": "user",
+      "content": "Is Kryptonite a real chemical element on the periodic table? Answer Yes or No, then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "No. Kryptonite is not a real chemical element on the periodic table. It is a fictional substance from the Superman comic books and does not exist in real life.",
+  "timestamp": 1774177122.7878861
+}

@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a Unicode emoji expert. Be precise and only include emojis that actually exist in Unicode."
+    },
+    {
+      "role": "user",
+      "content": "List ALL land animal emojis that exist in Unicode. For each, give the emoji character and its official name. Only include emojis that truly exist \u2014 do not make any up."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Certainly! Here is a list of **all land animal emojis** that exist in Unicode, with their emoji character and official Unicode name. (Note: This list excludes insects, birds, aquatic animals, and fantasy creatures.)\n\n---\n\n### Mammals\n\n- \ud83d\udc35 \u2014 Monkey Face\n- \ud83d\udc12 \u2014 Monkey\n- \ud83e\udd8d \u2014 Gorilla\n- \ud83e\udda7 \u2014 Orangutan\n- \ud83d\udc36 \u2014 Dog Face\n- \ud83d\udc15 \u2014 Dog\n- \ud83e\uddae \u2014 Guide Dog\n- \ud83d\udc15\u200d\ud83e\uddba \u2014 Service Dog\n- \ud83d\udc29 \u2014 Poodle\n- \ud83d\udc3a \u2014 Wolf\n- \ud83e\udd8a \u2014 Fox\n- \ud83e\udd9d \u2014 Raccoon\n- \ud83d\udc31 \u2014 Cat Face\n- \ud83d\udc08 \u2014 Cat\n- \ud83d\udc08\u200d\u2b1b \u2014 Black Cat\n- \ud83e\udd81 \u2014 Lion Face\n- \ud83d\udc2f \u2014 Tiger Face\n- \ud83d\udc05 \u2014 Tiger\n- \ud83d\udc06 \u2014 Leopard\n- \ud83d\udc34 \u2014 Horse Face\n- \ud83d\udc0e \u2014 Horse\n- \ud83e\udd84 \u2014 Unicorn Face\n- \ud83e\udd93 \u2014 Zebra\n- \ud83e\udd8c \u2014 Deer\n- \ud83e\uddac \u2014 Bison\n- \ud83d\udc2e \u2014 Cow Face\n- \ud83d\udc04 \u2014 Cow\n- \ud83d\udc02 \u2014 Ox\n- \ud83d\udc03 \u2014 Water Buffalo\n- \ud83d\udc37 \u2014 Pig Face\n- \ud83d\udc16 \u2014 Pig\n- \ud83d\udc17 \u2014 Boar\n- \ud83d\udc3d \u2014 Pig Nose\n- \ud83d\udc0f \u2014 Ram\n- \ud83d\udc11 \u2014 Ewe\n- \ud83d\udc10 \u2014 Goat\n- \ud83d\udc2a \u2014 Camel\n- \ud83d\udc2b \u2014 Two-Hump Camel\n- \ud83e\udd99 \u2014 Llama\n- \ud83e\udd92 \u2014 Giraffe\n- \ud83d\udc18 \u2014 Elephant\n- \ud83e\udda3 \u2014 Mammoth\n- \ud83e\udd8f \u2014 Rhinoceros\n- \ud83e\udd9b \u2014 Hippopotamus\n- \ud83d\udc2d \u2014 Mouse Face\n- \ud83d\udc01 \u2014 Mouse\n- \ud83d\udc00 \u2014 Rat\n- \ud83d\udc39 \u2014 Hamster Face\n- \ud83d\udc30 \u2014 Rabbit Face\n- \ud83d\udc07 \u2014 Rabbit\n- \ud83e\uddab \u2014 Beaver\n- \ud83e\udd94 \u2014 Hedgehog\n- \ud83e\udd87 \u2014 Bat\n- \ud83d\udc3b \u2014 Bear Face\n- \ud83d\udc3b\u200d\u2744\ufe0f \u2014 Polar Bear\n- \ud83d\udc28 \u2014 Koala\n- \ud83d\udc3c \u2014 Panda Face\n- \ud83e\udda5 \u2014 Sloth\n- \ud83e\udda6 \u2014 Otter\n- \ud83e\udda8 \u2014 Skunk\n- \ud83e\udd98 \u2014 Kangaroo\n- \ud83e\udda1 \u2014 Badger\n\n---\n\n### Reptiles & Amphibians\n\n- \ud83d\udc22 \u2014 Turtle\n- \ud83e\udd8e \u2014 Lizard\n- \ud83d\udc0d \u2014 Snake\n- \ud83d\udc0a \u2014 Crocodile\n\n---\n\n**Note:**  \n- This list includes only land mammals and reptiles/amphibians that are primarily land-dwelling.\n- It excludes birds, insects, aquatic animals (like fish, whales, dolphins, etc.), and fantasy creatures (except for the unicorn, which is a land animal in emoji).\n- All names are the official Unicode names.\n\nLet me know if you need a list for another category!",
+  "timestamp": 1774177133.1299396
+}

@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable geography assistant. Answer accurately."
+    },
+    {
+      "role": "user",
+      "content": "Is this statement true: 'Atlantis is the capital of Greece'? Answer Yes or No, then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "No. Atlantis is not the capital of Greece. The capital of Greece is Athens. Atlantis is a mythical city from ancient legends, not a real place.",
+  "timestamp": 1774177107.2032835
+}

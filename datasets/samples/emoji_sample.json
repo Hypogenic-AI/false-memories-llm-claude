@@ -1,0 +1,66 @@
+{
+  "version": "16.0",
+  "total_fully_qualified": 3781,
+  "emojis_sample": [
+    {
+      "codepoints": "1F600",
+      "emoji": "😀",
+      "version": "1.0",
+      "name": "grinning face"
+    },
+    {
+      "codepoints": "1F603",
+      "emoji": "😃",
+      "version": "0.6",
+      "name": "grinning face with big eyes"
+    },
+    {
+      "codepoints": "1F604",
+      "emoji": "😄",
+      "version": "0.6",
+      "name": "grinning face with smiling eyes"
+    },
+    {
+      "codepoints": "1F601",
+      "emoji": "😁",
+      "version": "0.6",
+      "name": "beaming face with smiling eyes"
+    },
+    {
+      "codepoints": "1F606",
+      "emoji": "😆",
+      "version": "0.6",
+      "name": "grinning squinting face"
+    },
+    {
+      "codepoints": "1F605",
+      "emoji": "😅",
+      "version": "0.6",
+      "name": "grinning face with sweat"
+    },
+    {
+      "codepoints": "1F923",
+      "emoji": "🤣",
+      "version": "3.0",
+      "name": "rolling on the floor laughing"
+    },
+    {
+      "codepoints": "1F602",
+      "emoji": "😂",
+      "version": "0.6",
+      "name": "face with tears of joy"
+    },
+    {
+      "codepoints": "1F642",
+      "emoji": "🙂",
+      "version": "1.0",
+      "name": "slightly smiling face"
+    },
+    {
+      "codepoints": "1F643",
+      "emoji": "🙃",
+      "version": "1.0",
+      "name": "upside-down face"
+    }
+  ]
+}

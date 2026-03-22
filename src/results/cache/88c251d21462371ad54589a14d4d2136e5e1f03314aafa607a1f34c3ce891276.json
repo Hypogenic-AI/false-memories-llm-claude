@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1-mini",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable assistant. Answer questions accurately and concisely. If you are unsure, say so."
+    },
+    {
+      "role": "user",
+      "content": "Does a starfruit emoji exist in Unicode? Answer with just 'Yes' or 'No', then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "No. The Unicode standard includes a star emoji (\u2b50) and a fruit emoji (\ud83c\udf4e, \ud83c\udf4c, etc.), but there is no specific emoji for starfruit.",
+  "timestamp": 1774177025.946805
+}

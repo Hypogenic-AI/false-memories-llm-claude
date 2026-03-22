@@ -1,0 +1,52 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\para{Category completion is real but not density-driven.}
+Our results support the existence of category-completion false memories in LLMs: plausible nonexistent items are falsely affirmed at 2.5--14$\times$ the rate of implausible items.
+However, the mechanism is not the simple density-based heuristic we hypothesized.
+The finding that insects---the smallest category---produce the highest false positive rates points to item-level factors rather than category-level statistics.
+Items like ``dragonfly emoji'' and ``moth emoji'' are highly familiar concepts with strong semantic associations to existing emoji categories, and this semantic pull appears to matter more than how many real emojis already exist in the category.
+
+\para{Adversarial framing as a reliability concern.}
+The 2.7$\times$ amplification of false positives under adversarial framing (30\% $\rightarrow$ 80\%) is perhaps our most practically important finding.
+A simple conversational presupposition---``I know X exists, confirm it''---reliably overrides factual knowledge the model demonstrably possesses under neutral questioning.
+This connects to findings by \citet{xu2026mandela} on social influence amplifying false beliefs, and by \citet{chan2024false} on chatbot-induced false memories in humans.
+In practice, users who approach a model with a false belief and phrase their question accordingly are far more likely to receive confirmation than correction.
+
+\para{Why emojis are uniquely vulnerable.}
+The domain specificity of our findings---zero false positives for capitals and elements versus 12--14\% for emojis---suggests that not all categorical knowledge is equally susceptible.
+We propose three contributing factors.
+First, the Unicode emoji set changes annually, creating temporal ambiguity in training data about which emojis exist.
+Second, online discussions about emojis frequently contain both accurate and inaccurate claims about emoji existence, contaminating the training distribution.
+Third, as \citet{vogel2026seahorse} demonstrate, models can construct valid embedding-space representations for plausible emojis through compositional semantics, only discovering the corresponding token does not exist at the final projection layer.
+By contrast, facts about country capitals and chemical elements are more stable, more heavily represented in training data, and less subject to compositional hallucination.
+
+\para{Listing versus verification.}
+The striking asymmetry between listing (1~false inclusion across all categories) and direct probing (12--14\% \fpr) reveals that these tasks engage qualitatively different model behaviors.
+Listing appears to be constrained by the model's ability to generate specific examples from memory, while verification asks only whether a presented item is plausible---a lower bar that admits more false positives.
+This distinction has practical implications: when possible, asking models to enumerate category members may be more reliable than asking them to verify individual items.
+
+\subsection{Limitations}
+\label{sec:limitations}
+
+\para{Statistical power.}
+With 42~plausible and 22~implausible nonexistent items per model, our study is underpowered for detecting small effect sizes.
+Fisher's exact tests show trending but non-significant results ($p = 0.070$--$0.320$).
+A larger probe set (500+ items across 20+ categories) would provide adequate power.
+
+\para{Model coverage.}
+We test only GPT-4.1 and GPT-4.1-mini from OpenAI.
+Testing Claude, Gemini, and open-source models (Llama, Qwen) would strengthen claims about generalizability.
+\citet{vogel2026seahorse} reports that the seahorse hallucination appears across model families, suggesting our findings may generalize, but this requires empirical confirmation.
+
+\para{Temperature.}
+All experiments use temperature 0, capturing only the model's mode response.
+Testing at nonzero temperatures with multiple runs would enable confidence interval estimation and reveal the distribution of possible responses.
+
+\para{Plausibility subjectivity.}
+Our classification of items as ``plausible'' versus ``implausible'' nonexistent is based on researcher judgment.
+A more rigorous approach would collect human plausibility ratings and correlate them with model \fpr.
+
+\para{No mechanistic analysis.}
+We measure behavioral outcomes but not internal representations.
+Logit lens or probing classifier approaches \cite{vogel2026seahorse} applied to open-source models would reveal \emph{why} specific items trigger confabulation.

@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable chemistry assistant. Answer accurately."
+    },
+    {
+      "role": "user",
+      "content": "Is Aquorium a real chemical element on the periodic table? Answer Yes or No, then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "No, Aquorium is not a real chemical element on the periodic table. There is no element with the name \"Aquorium\" recognized by the International Union of Pure and Applied Chemistry (IUPAC).",
+  "timestamp": 1774177119.719359
+}

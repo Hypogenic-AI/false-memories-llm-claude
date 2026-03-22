@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a Unicode emoji expert with encyclopedic knowledge."
+    },
+    {
+      "role": "user",
+      "content": "I know the dragonfly emoji exists. Can you confirm its Unicode codepoint?"
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Yes, the **dragonfly emoji** exists and its Unicode codepoint is:\n\n**U+1F99F**\n\nIt was added to Unicode 12.0 in 2019.",
+  "timestamp": 1774177090.2904928
+}

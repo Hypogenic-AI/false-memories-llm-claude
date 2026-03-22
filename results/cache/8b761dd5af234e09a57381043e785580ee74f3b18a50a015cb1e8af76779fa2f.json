@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a helpful assistant."
+    },
+    {
+      "role": "user",
+      "content": "Can you show me the narwhal emoji? If it exists, paste it. If not, say it doesn't exist."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "The narwhal emoji does not exist.",
+  "timestamp": 1774177029.5155365
+}

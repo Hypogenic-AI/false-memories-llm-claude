@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable geography assistant. Answer accurately."
+    },
+    {
+      "role": "user",
+      "content": "Is this statement true: 'Springfield is the capital of France'? Answer Yes or No, then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "No. Springfield is not the capital of France. The capital of France is Paris. Springfield is a common city name in the United States, but it is not a capital city in France.",
+  "timestamp": 1774177106.49508
+}

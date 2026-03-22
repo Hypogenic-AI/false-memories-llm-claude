@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable chemistry assistant. Answer accurately."
+    },
+    {
+      "role": "user",
+      "content": "Is Uranium a real chemical element on the periodic table? Answer Yes or No, then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Yes. Uranium is a real chemical element on the periodic table. It has the symbol **U** and atomic number **92**. Uranium is a heavy, radioactive metal used primarily as fuel in nuclear reactors.",
+  "timestamp": 1774177113.7423334
+}

@@ -1,0 +1,11 @@
+PDF: /workspaces/false-memories-llm-claude/papers/chan2024_conversational_ai_false_memories.pdf
+Total pages: 18
+Pages per chunk: 3
+
+Chunks:
+  chan2024_conversational_ai_false_memories_chunk_001.pdf: pages 1-3
+  chan2024_conversational_ai_false_memories_chunk_002.pdf: pages 4-6
+  chan2024_conversational_ai_false_memories_chunk_003.pdf: pages 7-9
+  chan2024_conversational_ai_false_memories_chunk_004.pdf: pages 10-12
+  chan2024_conversational_ai_false_memories_chunk_005.pdf: pages 13-15
+  chan2024_conversational_ai_false_memories_chunk_006.pdf: pages 16-18

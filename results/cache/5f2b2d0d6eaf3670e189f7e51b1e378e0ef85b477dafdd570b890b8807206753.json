@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable geography assistant. Answer accurately."
+    },
+    {
+      "role": "user",
+      "content": "Is this statement true: 'Gondor is the capital of New Zealand'? Answer Yes or No, then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "No. Gondor is not the capital of New Zealand. Gondor is a fictional kingdom from J.R.R. Tolkien's \"The Lord of the Rings.\" The capital of New Zealand is Wellington.",
+  "timestamp": 1774177107.9284542
+}

@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable chemistry assistant. Answer accurately."
+    },
+    {
+      "role": "user",
+      "content": "Is Hydrogen a real chemical element on the periodic table? Answer Yes or No, then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Yes. Hydrogen is a real chemical element on the periodic table. It has the symbol **H** and atomic number **1**, making it the lightest and most abundant element in the universe.",
+  "timestamp": 1774177108.757726
+}

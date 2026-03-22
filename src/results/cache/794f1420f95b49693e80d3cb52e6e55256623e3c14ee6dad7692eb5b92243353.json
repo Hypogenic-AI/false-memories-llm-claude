@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable geography assistant. Answer accurately."
+    },
+    {
+      "role": "user",
+      "content": "Is Spain a country? Answer Yes or No, then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Yes. Spain is a country located in southwestern Europe on the Iberian Peninsula. It is a sovereign nation with its own government, borders, and recognized international status.",
+  "timestamp": 1774177099.2908106
+}

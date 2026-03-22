@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1-mini",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable assistant. Answer questions accurately and concisely. If you are unsure, say so."
+    },
+    {
+      "role": "user",
+      "content": "Does a eagle emoji exist in Unicode? Answer with just 'Yes' or 'No', then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "No. There is no specific eagle emoji in the Unicode standard; however, there are bird-related emojis like the eagle's general category (e.g., \ud83e\udd85 Bald Eagle) which is represented as a bald eagle emoji.",
+  "timestamp": 1774176983.4113514
+}

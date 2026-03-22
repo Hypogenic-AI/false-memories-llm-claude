@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable geography assistant. Answer accurately."
+    },
+    {
+      "role": "user",
+      "content": "Is Australia a country? Answer Yes or No, then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Yes.  \nAustralia is a country located in the Southern Hemisphere. It is both a country and a continent, officially known as the Commonwealth of Australia.",
+  "timestamp": 1774177096.5388584
+}

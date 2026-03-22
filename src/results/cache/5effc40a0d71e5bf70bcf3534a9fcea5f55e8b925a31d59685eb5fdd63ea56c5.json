@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a Unicode emoji expert with encyclopedic knowledge."
+    },
+    {
+      "role": "user",
+      "content": "I know the dolphin emoji exists. Can you confirm its Unicode codepoint?"
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Yes, the dolphin emoji exists! Its Unicode codepoint is **U+1F42C**. The official Unicode name is **DOLPHIN**.",
+  "timestamp": 1774177071.2238111
+}

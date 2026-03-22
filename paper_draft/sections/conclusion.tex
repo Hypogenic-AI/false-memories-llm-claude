@@ -1,0 +1,16 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+We systematically investigate category-completion false memories in LLMs, testing whether models falsely assert the existence of plausible-but-nonexistent items within well-populated categories.
+Using the nonexistent seahorse emoji as a starting point, we probe two commercial LLMs across 162~items in 7~categories with 4~prompt framings.
+
+Our findings paint a nuanced picture.
+LLMs do exhibit category-completion false memories---plausible nonexistent items are affirmed at higher rates than implausible ones---but the driving mechanism is item-level semantic plausibility rather than category density.
+The smallest category tested (insects) produces the highest error rates, directly contradicting the density hypothesis.
+Adversarial framing amplifies false positive rates from 30\% to 80\%, demonstrating that conversational presuppositions can reliably override factual knowledge.
+The phenomenon is domain-specific: emojis are highly vulnerable while structured factual knowledge remains robust.
+
+These results have implications for LLM deployment.
+Emoji-like knowledge domains---mutable catalogs where training data contains contradictory claims---require special attention in evaluation and post-training calibration.
+Users and system designers should be aware that leading questions dramatically increase confabulation rates.
+Future work should scale the probe dataset, extend to additional models, and apply mechanistic interpretability methods to understand why specific items trigger false memories while others do not.

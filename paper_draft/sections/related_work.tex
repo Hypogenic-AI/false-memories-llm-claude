@@ -1,0 +1,31 @@
+\section{Related Work}
+\label{sec:related}
+
+\para{LLM hallucination and confabulation.}
+Hallucination in language models---generating text that is fluent but factually incorrect---has been extensively studied \cite{ji2023survey, zhang2025survey}.
+\citet{kalai2025hallucinate} provide a formal framework showing that hallucination is statistically inevitable: the generative error rate is at least twice the misclassification rate, and post-training destroys calibration (ECE increases from 0.007 to 0.074).
+\citet{xu2024inevitable} prove a complementary result: LLMs cannot learn all computable functions, making hallucination an innate limitation.
+\citet{berberette2024redefining} argue for replacing the blanket term ``hallucination'' with a taxonomy grounded in cognitive psychology, distinguishing confirmation bias, anchoring, and source monitoring errors.
+Our work focuses on a specific subtype of hallucination---category-completion confabulation---where models generate detailed but fabricated evidence for the existence of plausible category members.
+
+\para{False memories in cognitive psychology and LLMs.}
+The Deese-Roediger-McDermott (DRM) paradigm demonstrates that humans falsely recall words that are semantically associated with presented lists \cite{roediger1995creating}.
+\citet{cao2025memory} systematically test seven human memory phenomena on LLMs, finding that they exhibit DRM-style false memories with an 11.4\% critical lure recall rate, confirming that semantic activation drives false recall in language models.
+\citet{chan2024false} show that LLM-powered chatbots amplify false memories in human users, inducing 3$\times$ more false memories than control conditions through sycophancy and elaborative confabulation.
+Unlike these works, which study false \emph{recall} of items from presented lists, we study false \emph{recognition} of items that were never presented---testing whether models falsely assert the existence of plausible items in well-known categories.
+
+\para{The seahorse emoji phenomenon.}
+\citet{vogel2026seahorse} provides the first mechanistic analysis of why LLMs hallucinate the seahorse emoji, using logit lens interpretability on open-source models.
+The analysis reveals that models compose a valid embedding-space representation for ``seahorse + emoji'' via vector addition in middle layers, but only discover the corresponding token does not exist at the final projection.
+Training data contamination plays a role: both correct (``no seahorse emoji'') and false (``I remember this emoji'') assertions exist online, creating ambiguity.
+We build on this case study by testing whether the phenomenon generalizes to a systematic category-completion mechanism across multiple categories and domains.
+
+\para{Collective false memory and social influence.}
+\citet{xu2026mandela} introduce the \textsc{ManBench} benchmark (4,838~questions) for evaluating collective false memories in multi-agent LLM systems, finding that social influence can double error rates (GPT-5: 17.6\% to 41.6\%) and that role-based false narratives are more potent than simple consensus.
+This work highlights how false beliefs can be reinforced and consolidated---a mechanism relevant to how training data consensus on nonexistent items may create persistent model beliefs.
+
+\para{Tokenization and emoji representation.}
+\citet{wang2024tokenization} demonstrate that tokenization misalignment, particularly with multi-byte UTF-8 characters, creates systematic vulnerabilities in LLMs.
+Emojis, which require multi-byte encodings and are frequently added to or modified in Unicode standards, represent a particularly challenging domain for tokenization-based knowledge representation.
+\citet{farquhar2024semantic} propose semantic entropy as a detection method for confabulation, clustering generations by meaning before computing uncertainty.
+Both approaches are complementary to our behavioral probing methodology.

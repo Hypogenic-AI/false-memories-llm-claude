@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a Unicode emoji expert. Be precise and only include emojis that actually exist in Unicode."
+    },
+    {
+      "role": "user",
+      "content": "List ALL fruit emojis that exist in Unicode. For each, give the emoji character and its official name. Only include emojis that truly exist \u2014 do not make any up."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Certainly! Here is a list of all fruit emojis that exist in Unicode, with their emoji character and official Unicode name:\n\n1. \ud83c\udf47  Grapes  \n2. \ud83c\udf48  Melon  \n3. \ud83c\udf49  Watermelon  \n4. \ud83c\udf4a  Tangerine  \n5. \ud83c\udf4b  Lemon  \n6. \ud83c\udf4c  Banana  \n7. \ud83c\udf4d  Pineapple  \n8. \ud83c\udf4e  Red Apple  \n9. \ud83c\udf4f  Green Apple  \n10. \ud83c\udf50  Pear  \n11. \ud83c\udf51  Peach  \n12. \ud83c\udf52  Cherries  \n13. \ud83c\udf53  Strawberry  \n14. \ud83e\udd5d  Kiwi Fruit  \n15. \ud83e\udd6d  Mango  \n16. \ud83e\uded0  Blueberries  \n17. \ud83e\uded2  Olive  \n18. \ud83e\udd65  Coconut  \n\nThese are all the fruit emojis officially recognized in Unicode as of June 2024.",
+  "timestamp": 1774177139.709302
+}

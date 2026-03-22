@@ -1,0 +1,1380 @@
+[
+  {
+    "category": "marine_animal_emojis",
+    "item": "whale",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🐳",
+    "domain": "emoji"
+  },
+  {
+    "category": "marine_animal_emojis",
+    "item": "dolphin",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🐬",
+    "domain": "emoji"
+  },
+  {
+    "category": "marine_animal_emojis",
+    "item": "fish",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🐟",
+    "domain": "emoji"
+  },
+  {
+    "category": "marine_animal_emojis",
+    "item": "tropical fish",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🐠",
+    "domain": "emoji"
+  },
+  {
+    "category": "marine_animal_emojis",
+    "item": "blowfish",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🐡",
+    "domain": "emoji"
+  },
+  {
+    "category": "marine_animal_emojis",
+    "item": "shark",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🦈",
+    "domain": "emoji"
+  },
+  {
+    "category": "marine_animal_emojis",
+    "item": "octopus",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🐙",
+    "domain": "emoji"
+  },
+  {
+    "category": "marine_animal_emojis",
+    "item": "crab",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🦀",
+    "domain": "emoji"
+  },
+  {
+    "category": "marine_animal_emojis",
+    "item": "lobster",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🦞",
+    "domain": "emoji"
+  },
+  {
+    "category": "marine_animal_emojis",
+    "item": "shrimp",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🦐",
+    "domain": "emoji"
+  },
+  {
+    "category": "marine_animal_emojis",
+    "item": "squid",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🦑",
+    "domain": "emoji"
+  },
+  {
+    "category": "marine_animal_emojis",
+    "item": "seal",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🦭",
+    "domain": "emoji"
+  },
+  {
+    "category": "marine_animal_emojis",
+    "item": "jellyfish",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🪼",
+    "domain": "emoji"
+  },
+  {
+    "category": "marine_animal_emojis",
+    "item": "coral",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🪸",
+    "domain": "emoji"
+  },
+  {
+    "category": "marine_animal_emojis",
+    "item": "turtle",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🐢",
+    "domain": "emoji"
+  },
+  {
+    "category": "marine_animal_emojis",
+    "item": "seahorse",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "marine_animal_emojis",
+    "item": "starfish",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "marine_animal_emojis",
+    "item": "sea urchin",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "marine_animal_emojis",
+    "item": "manta ray",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "marine_animal_emojis",
+    "item": "eel",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "marine_animal_emojis",
+    "item": "clam",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "marine_animal_emojis",
+    "item": "sea lion",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "marine_animal_emojis",
+    "item": "narwhal",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "marine_animal_emojis",
+    "item": "manatee",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "marine_animal_emojis",
+    "item": "stingray",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "marine_animal_emojis",
+    "item": "anglerfish",
+    "ground_truth": false,
+    "plausibility": "implausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "marine_animal_emojis",
+    "item": "sea cucumber",
+    "ground_truth": false,
+    "plausibility": "implausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "marine_animal_emojis",
+    "item": "barnacle",
+    "ground_truth": false,
+    "plausibility": "implausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "marine_animal_emojis",
+    "item": "plankton",
+    "ground_truth": false,
+    "plausibility": "implausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "marine_animal_emojis",
+    "item": "sea slug",
+    "ground_truth": false,
+    "plausibility": "implausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "land_animal_emojis",
+    "item": "dog",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🐕",
+    "domain": "emoji"
+  },
+  {
+    "category": "land_animal_emojis",
+    "item": "cat",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🐈",
+    "domain": "emoji"
+  },
+  {
+    "category": "land_animal_emojis",
+    "item": "horse",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🐎",
+    "domain": "emoji"
+  },
+  {
+    "category": "land_animal_emojis",
+    "item": "cow",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🐄",
+    "domain": "emoji"
+  },
+  {
+    "category": "land_animal_emojis",
+    "item": "pig",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🐖",
+    "domain": "emoji"
+  },
+  {
+    "category": "land_animal_emojis",
+    "item": "sheep",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🐑",
+    "domain": "emoji"
+  },
+  {
+    "category": "land_animal_emojis",
+    "item": "goat",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🐐",
+    "domain": "emoji"
+  },
+  {
+    "category": "land_animal_emojis",
+    "item": "elephant",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🐘",
+    "domain": "emoji"
+  },
+  {
+    "category": "land_animal_emojis",
+    "item": "lion",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🦁",
+    "domain": "emoji"
+  },
+  {
+    "category": "land_animal_emojis",
+    "item": "tiger",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🐅",
+    "domain": "emoji"
+  },
+  {
+    "category": "land_animal_emojis",
+    "item": "bear",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🐻",
+    "domain": "emoji"
+  },
+  {
+    "category": "land_animal_emojis",
+    "item": "rabbit",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🐇",
+    "domain": "emoji"
+  },
+  {
+    "category": "land_animal_emojis",
+    "item": "fox",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🦊",
+    "domain": "emoji"
+  },
+  {
+    "category": "land_animal_emojis",
+    "item": "deer",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🦌",
+    "domain": "emoji"
+  },
+  {
+    "category": "land_animal_emojis",
+    "item": "giraffe",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🦒",
+    "domain": "emoji"
+  },
+  {
+    "category": "land_animal_emojis",
+    "item": "platypus",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "land_animal_emojis",
+    "item": "armadillo",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "land_animal_emojis",
+    "item": "capybara",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "land_animal_emojis",
+    "item": "alpaca",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "land_animal_emojis",
+    "item": "wombat",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "land_animal_emojis",
+    "item": "cheetah",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "land_animal_emojis",
+    "item": "gazelle",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "land_animal_emojis",
+    "item": "pangolin",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "land_animal_emojis",
+    "item": "tapir",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "land_animal_emojis",
+    "item": "opossum",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "land_animal_emojis",
+    "item": "aardvark",
+    "ground_truth": false,
+    "plausibility": "implausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "land_animal_emojis",
+    "item": "okapi",
+    "ground_truth": false,
+    "plausibility": "implausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "land_animal_emojis",
+    "item": "binturong",
+    "ground_truth": false,
+    "plausibility": "implausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "land_animal_emojis",
+    "item": "quokka",
+    "ground_truth": false,
+    "plausibility": "implausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "land_animal_emojis",
+    "item": "numbat",
+    "ground_truth": false,
+    "plausibility": "implausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "bird_emojis",
+    "item": "eagle",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "medium",
+    "emoji_char": "🦅",
+    "domain": "emoji"
+  },
+  {
+    "category": "bird_emojis",
+    "item": "owl",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "medium",
+    "emoji_char": "🦉",
+    "domain": "emoji"
+  },
+  {
+    "category": "bird_emojis",
+    "item": "parrot",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "medium",
+    "emoji_char": "🦜",
+    "domain": "emoji"
+  },
+  {
+    "category": "bird_emojis",
+    "item": "swan",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "medium",
+    "emoji_char": "🦢",
+    "domain": "emoji"
+  },
+  {
+    "category": "bird_emojis",
+    "item": "flamingo",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "medium",
+    "emoji_char": "🦩",
+    "domain": "emoji"
+  },
+  {
+    "category": "bird_emojis",
+    "item": "peacock",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "medium",
+    "emoji_char": "🦚",
+    "domain": "emoji"
+  },
+  {
+    "category": "bird_emojis",
+    "item": "penguin",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "medium",
+    "emoji_char": "🐧",
+    "domain": "emoji"
+  },
+  {
+    "category": "bird_emojis",
+    "item": "rooster",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "medium",
+    "emoji_char": "🐓",
+    "domain": "emoji"
+  },
+  {
+    "category": "bird_emojis",
+    "item": "dove",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "medium",
+    "emoji_char": "🕊️",
+    "domain": "emoji"
+  },
+  {
+    "category": "bird_emojis",
+    "item": "duck",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "medium",
+    "emoji_char": "🦆",
+    "domain": "emoji"
+  },
+  {
+    "category": "bird_emojis",
+    "item": "seagull",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "medium",
+    "domain": "emoji"
+  },
+  {
+    "category": "bird_emojis",
+    "item": "hummingbird",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "medium",
+    "domain": "emoji"
+  },
+  {
+    "category": "bird_emojis",
+    "item": "pelican",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "medium",
+    "domain": "emoji"
+  },
+  {
+    "category": "bird_emojis",
+    "item": "toucan",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "medium",
+    "domain": "emoji"
+  },
+  {
+    "category": "bird_emojis",
+    "item": "crow",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "medium",
+    "domain": "emoji"
+  },
+  {
+    "category": "bird_emojis",
+    "item": "sparrow",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "medium",
+    "domain": "emoji"
+  },
+  {
+    "category": "bird_emojis",
+    "item": "hawk",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "medium",
+    "domain": "emoji"
+  },
+  {
+    "category": "bird_emojis",
+    "item": "robin",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "medium",
+    "domain": "emoji"
+  },
+  {
+    "category": "bird_emojis",
+    "item": "kiwi bird",
+    "ground_truth": false,
+    "plausibility": "implausible",
+    "density": "medium",
+    "domain": "emoji"
+  },
+  {
+    "category": "bird_emojis",
+    "item": "cassowary",
+    "ground_truth": false,
+    "plausibility": "implausible",
+    "density": "medium",
+    "domain": "emoji"
+  },
+  {
+    "category": "bird_emojis",
+    "item": "albatross",
+    "ground_truth": false,
+    "plausibility": "implausible",
+    "density": "medium",
+    "domain": "emoji"
+  },
+  {
+    "category": "bird_emojis",
+    "item": "ibis",
+    "ground_truth": false,
+    "plausibility": "implausible",
+    "density": "medium",
+    "domain": "emoji"
+  },
+  {
+    "category": "insect_emojis",
+    "item": "butterfly",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "medium",
+    "emoji_char": "🦋",
+    "domain": "emoji"
+  },
+  {
+    "category": "insect_emojis",
+    "item": "bug",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "medium",
+    "emoji_char": "🐛",
+    "domain": "emoji"
+  },
+  {
+    "category": "insect_emojis",
+    "item": "ant",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "medium",
+    "emoji_char": "🐜",
+    "domain": "emoji"
+  },
+  {
+    "category": "insect_emojis",
+    "item": "honeybee",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "medium",
+    "emoji_char": "🐝",
+    "domain": "emoji"
+  },
+  {
+    "category": "insect_emojis",
+    "item": "ladybug",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "medium",
+    "emoji_char": "🐞",
+    "domain": "emoji"
+  },
+  {
+    "category": "insect_emojis",
+    "item": "cricket",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "medium",
+    "emoji_char": "🦗",
+    "domain": "emoji"
+  },
+  {
+    "category": "insect_emojis",
+    "item": "cockroach",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "medium",
+    "emoji_char": "🪳",
+    "domain": "emoji"
+  },
+  {
+    "category": "insect_emojis",
+    "item": "beetle",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "medium",
+    "emoji_char": "🪲",
+    "domain": "emoji"
+  },
+  {
+    "category": "insect_emojis",
+    "item": "dragonfly",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "medium",
+    "domain": "emoji"
+  },
+  {
+    "category": "insect_emojis",
+    "item": "firefly",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "medium",
+    "domain": "emoji"
+  },
+  {
+    "category": "insect_emojis",
+    "item": "grasshopper",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "medium",
+    "domain": "emoji"
+  },
+  {
+    "category": "insect_emojis",
+    "item": "moth",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "medium",
+    "domain": "emoji"
+  },
+  {
+    "category": "insect_emojis",
+    "item": "wasp",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "medium",
+    "domain": "emoji"
+  },
+  {
+    "category": "insect_emojis",
+    "item": "centipede",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "medium",
+    "domain": "emoji"
+  },
+  {
+    "category": "insect_emojis",
+    "item": "silverfish",
+    "ground_truth": false,
+    "plausibility": "implausible",
+    "density": "medium",
+    "domain": "emoji"
+  },
+  {
+    "category": "insect_emojis",
+    "item": "earwig",
+    "ground_truth": false,
+    "plausibility": "implausible",
+    "density": "medium",
+    "domain": "emoji"
+  },
+  {
+    "category": "insect_emojis",
+    "item": "mite",
+    "ground_truth": false,
+    "plausibility": "implausible",
+    "density": "medium",
+    "domain": "emoji"
+  },
+  {
+    "category": "insect_emojis",
+    "item": "weevil",
+    "ground_truth": false,
+    "plausibility": "implausible",
+    "density": "medium",
+    "domain": "emoji"
+  },
+  {
+    "category": "fruit_emojis",
+    "item": "apple",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🍎",
+    "domain": "emoji"
+  },
+  {
+    "category": "fruit_emojis",
+    "item": "banana",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🍌",
+    "domain": "emoji"
+  },
+  {
+    "category": "fruit_emojis",
+    "item": "grapes",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🍇",
+    "domain": "emoji"
+  },
+  {
+    "category": "fruit_emojis",
+    "item": "strawberry",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🍓",
+    "domain": "emoji"
+  },
+  {
+    "category": "fruit_emojis",
+    "item": "watermelon",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🍉",
+    "domain": "emoji"
+  },
+  {
+    "category": "fruit_emojis",
+    "item": "cherry",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🍒",
+    "domain": "emoji"
+  },
+  {
+    "category": "fruit_emojis",
+    "item": "peach",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🍑",
+    "domain": "emoji"
+  },
+  {
+    "category": "fruit_emojis",
+    "item": "pineapple",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🍍",
+    "domain": "emoji"
+  },
+  {
+    "category": "fruit_emojis",
+    "item": "mango",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🥭",
+    "domain": "emoji"
+  },
+  {
+    "category": "fruit_emojis",
+    "item": "lemon",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🍋",
+    "domain": "emoji"
+  },
+  {
+    "category": "fruit_emojis",
+    "item": "orange",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🍊",
+    "domain": "emoji"
+  },
+  {
+    "category": "fruit_emojis",
+    "item": "kiwi",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🥝",
+    "domain": "emoji"
+  },
+  {
+    "category": "fruit_emojis",
+    "item": "coconut",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🥥",
+    "domain": "emoji"
+  },
+  {
+    "category": "fruit_emojis",
+    "item": "blueberries",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "emoji_char": "🫐",
+    "domain": "emoji"
+  },
+  {
+    "category": "fruit_emojis",
+    "item": "papaya",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "fruit_emojis",
+    "item": "passion fruit",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "fruit_emojis",
+    "item": "guava",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "fruit_emojis",
+    "item": "pomegranate",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "fruit_emojis",
+    "item": "fig",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "fruit_emojis",
+    "item": "dragonfruit",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "fruit_emojis",
+    "item": "lychee",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "fruit_emojis",
+    "item": "raspberry",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "fruit_emojis",
+    "item": "durian",
+    "ground_truth": false,
+    "plausibility": "implausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "fruit_emojis",
+    "item": "jackfruit",
+    "ground_truth": false,
+    "plausibility": "implausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "fruit_emojis",
+    "item": "starfruit",
+    "ground_truth": false,
+    "plausibility": "implausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "fruit_emojis",
+    "item": "rambutan",
+    "ground_truth": false,
+    "plausibility": "implausible",
+    "density": "high",
+    "domain": "emoji"
+  },
+  {
+    "category": "country_capitals",
+    "item": "France",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "detail": "Paris",
+    "domain": "factual"
+  },
+  {
+    "category": "country_capitals",
+    "item": "Germany",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "detail": "Berlin",
+    "domain": "factual"
+  },
+  {
+    "category": "country_capitals",
+    "item": "Japan",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "detail": "Tokyo",
+    "domain": "factual"
+  },
+  {
+    "category": "country_capitals",
+    "item": "Australia",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "detail": "Canberra",
+    "domain": "factual"
+  },
+  {
+    "category": "country_capitals",
+    "item": "Brazil",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "detail": "Brasília",
+    "domain": "factual"
+  },
+  {
+    "category": "country_capitals",
+    "item": "Canada",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "detail": "Ottawa",
+    "domain": "factual"
+  },
+  {
+    "category": "country_capitals",
+    "item": "Italy",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "detail": "Rome",
+    "domain": "factual"
+  },
+  {
+    "category": "country_capitals",
+    "item": "Spain",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "detail": "Madrid",
+    "domain": "factual"
+  },
+  {
+    "category": "country_capitals",
+    "item": "India",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "detail": "New Delhi",
+    "domain": "factual"
+  },
+  {
+    "category": "country_capitals",
+    "item": "Egypt",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "detail": "Cairo",
+    "domain": "factual"
+  },
+  {
+    "category": "country_capitals",
+    "item": "Sydney is the capital of Australia",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "factual"
+  },
+  {
+    "category": "country_capitals",
+    "item": "Mumbai is the capital of India",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "factual"
+  },
+  {
+    "category": "country_capitals",
+    "item": "Shanghai is the capital of China",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "factual"
+  },
+  {
+    "category": "country_capitals",
+    "item": "Istanbul is the capital of Turkey",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "factual"
+  },
+  {
+    "category": "country_capitals",
+    "item": "Rio de Janeiro is the capital of Brazil",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "factual"
+  },
+  {
+    "category": "country_capitals",
+    "item": "Springfield is the capital of France",
+    "ground_truth": false,
+    "plausibility": "implausible",
+    "density": "high",
+    "domain": "factual"
+  },
+  {
+    "category": "country_capitals",
+    "item": "Atlantis is the capital of Greece",
+    "ground_truth": false,
+    "plausibility": "implausible",
+    "density": "high",
+    "domain": "factual"
+  },
+  {
+    "category": "country_capitals",
+    "item": "Gondor is the capital of New Zealand",
+    "ground_truth": false,
+    "plausibility": "implausible",
+    "density": "high",
+    "domain": "factual"
+  },
+  {
+    "category": "chemical_elements",
+    "item": "Hydrogen",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "detail": "H",
+    "domain": "factual"
+  },
+  {
+    "category": "chemical_elements",
+    "item": "Helium",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "detail": "He",
+    "domain": "factual"
+  },
+  {
+    "category": "chemical_elements",
+    "item": "Carbon",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "detail": "C",
+    "domain": "factual"
+  },
+  {
+    "category": "chemical_elements",
+    "item": "Oxygen",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "detail": "O",
+    "domain": "factual"
+  },
+  {
+    "category": "chemical_elements",
+    "item": "Iron",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "detail": "Fe",
+    "domain": "factual"
+  },
+  {
+    "category": "chemical_elements",
+    "item": "Gold",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "detail": "Au",
+    "domain": "factual"
+  },
+  {
+    "category": "chemical_elements",
+    "item": "Silver",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "detail": "Ag",
+    "domain": "factual"
+  },
+  {
+    "category": "chemical_elements",
+    "item": "Uranium",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "detail": "U",
+    "domain": "factual"
+  },
+  {
+    "category": "chemical_elements",
+    "item": "Platinum",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "detail": "Pt",
+    "domain": "factual"
+  },
+  {
+    "category": "chemical_elements",
+    "item": "Titanium",
+    "ground_truth": true,
+    "plausibility": "real",
+    "density": "high",
+    "detail": "Ti",
+    "domain": "factual"
+  },
+  {
+    "category": "chemical_elements",
+    "item": "Viridium",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "factual"
+  },
+  {
+    "category": "chemical_elements",
+    "item": "Celestium",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "factual"
+  },
+  {
+    "category": "chemical_elements",
+    "item": "Terranium",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "factual"
+  },
+  {
+    "category": "chemical_elements",
+    "item": "Aquorium",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "factual"
+  },
+  {
+    "category": "chemical_elements",
+    "item": "Luminite",
+    "ground_truth": false,
+    "plausibility": "plausible",
+    "density": "high",
+    "domain": "factual"
+  },
+  {
+    "category": "chemical_elements",
+    "item": "Unobtainium",
+    "ground_truth": false,
+    "plausibility": "implausible",
+    "density": "high",
+    "domain": "factual"
+  },
+  {
+    "category": "chemical_elements",
+    "item": "Kryptonite",
+    "ground_truth": false,
+    "plausibility": "implausible",
+    "density": "high",
+    "domain": "factual"
+  },
+  {
+    "category": "chemical_elements",
+    "item": "Vibranium",
+    "ground_truth": false,
+    "plausibility": "implausible",
+    "density": "high",
+    "domain": "factual"
+  }
+]

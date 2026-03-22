@@ -1,0 +1,101 @@
+\section{Methodology}
+\label{sec:method}
+
+\subsection{Task Formulation}
+
+We frame the problem as a binary classification task: given an item $x$ and a category $c$, does the item exist as a member of category $c$?
+For each probe, we query a language model $\gM$ with a prompt $p(x, c)$ and parse the response as a binary judgment (exists / does not exist).
+We measure the \emph{false positive rate} (\fpr)---the probability that the model claims a nonexistent item exists---as our primary metric.
+
+Formally, let $\gS^+ = \{x : x \in c\}$ be the set of real members and $\gS^- = \{x : x \notin c\}$ be nonexistent items. We define:
+\begin{align}
+    \text{FPR} &= P(\gM(p(x,c)) = \text{``exists''} \mid x \in \gS^-) \\
+    \text{TPR} &= P(\gM(p(x,c)) = \text{``exists''} \mid x \in \gS^+)
+\end{align}
+
+\subsection{Probe Dataset}
+
+We construct a dataset of 162~items across 7~categories, each containing three item types: \emph{real} (ground-truth members), \emph{plausible nonexistent} (real-world entities that could plausibly belong but do not), and \emph{implausible nonexistent} (entities unlikely to belong).
+\tabref{tab:dataset} summarizes the dataset composition.
+
+\begin{table}[t]
+    \centering
+    \caption{Probe dataset composition across 7~categories. Density refers to the number of real members in each category. Ground truth for emoji categories is Unicode Emoji v16.0 \cite{unicode2024emoji}; geography and chemistry use standard references.}
+    \begin{tabular}{@{}lcccr@{}}
+        \toprule
+        \textbf{Category} & \textbf{Real} & \textbf{Plausible} & \textbf{Implausible} & \textbf{Density} \\
+        \midrule
+        Marine animal emojis & 15 & 10 & 5 & High \\
+        Land animal emojis   & 15 & 10 & 5 & High \\
+        Bird emojis          & 10 &  8 & 4 & Medium \\
+        Insect emojis        &  8 &  6 & 4 & Medium \\
+        Fruit emojis         & 14 &  8 & 4 & High \\
+        Country capitals     & 10 &  5 & 3 & High \\
+        Chemical elements    & 10 &  5 & 3 & High \\
+        \midrule
+        \textbf{Total}       & \textbf{82} & \textbf{52} & \textbf{28} & --- \\
+        \bottomrule
+    \end{tabular}
+    \label{tab:dataset}
+\end{table}
+
+\para{Plausibility criteria.}
+``Plausible nonexistent'' items are real-world entities that share strong semantic similarity with existing category members (\eg seahorse among marine animal emojis, starfish, platypus).
+``Implausible nonexistent'' items are real entities with weak category association (\eg barnacle, plankton, sea slug for marine emojis).
+This distinction tests whether semantic plausibility drives false positive rates.
+
+\subsection{Models}
+
+We test two models from the GPT-4.1 family:
+
+\begin{itemize}[leftmargin=*,itemsep=0pt,topsep=0pt]
+    \item \gptfull---OpenAI's full-size model, queried via the OpenAI API.
+    \item \gptmini---OpenAI's smaller, faster variant.
+\end{itemize}
+
+All queries use temperature 0.0 for deterministic outputs, with a maximum of 300~tokens per response (1,000 for listing experiments).
+All API responses are cached to SHA-256-keyed files for reproducibility.
+
+\subsection{Experimental Design}
+
+We conduct five experiments, each targeting a specific aspect of the category-completion hypothesis.
+
+\para{Experiment 1: Direct existence probing.}
+We query each model about all 126~emoji items using the direct prompt: ``Does a \{item\} emoji exist in Unicode?''
+This measures baseline \fpr across plausibility levels.
+
+\para{Experiment 2: Category density effect.}
+We analyze Experiment~1 data grouped by category size to test whether denser categories (\ie those with more real members) produce higher false positive rates.
+
+\para{Experiment 3: Prompt framing.}
+We test 20~key items (10~plausible nonexistent across categories) with four prompt framings:
+\begin{enumerate}[leftmargin=*,itemsep=0pt,topsep=0pt]
+    \item \emph{Direct}: ``Does a \{item\} emoji exist?''
+    \item \emph{Indirect}: ``Show me the \{item\} emoji.''
+    \item \emph{Confidence}: Direct prompt plus ``Rate your confidence 0--100.''
+    \item \emph{Adversarial}: ``I know the \{item\} emoji exists. Confirm its Unicode codepoint.''
+\end{enumerate}
+
+\para{Experiment 4: Cross-domain generalization.}
+We test plausible-nonexistent items in non-emoji domains (country capitals and chemical elements) to determine whether category-completion false memories extend beyond emojis.
+
+\para{Experiment 5: Category listing.}
+We ask models to list all emojis in each category, checking for spontaneous false inclusions. This tests whether generative listing engages different processes than verification.
+
+\subsection{Evaluation Metrics}
+
+We report four metrics grounded in signal detection theory \cite{green1966signal}:
+
+\begin{itemize}[leftmargin=*,itemsep=0pt,topsep=0pt]
+    \item \textbf{False positive rate (FPR)}: $P(\text{claims exist} \mid \text{does not exist})$.
+    \item \textbf{True positive rate (TPR)}: $P(\text{claims exist} \mid \text{exists})$.
+    \item \textbf{$d'$ (d-prime)}: Sensitivity, measuring the separation between hit and false alarm distributions.
+    \item \textbf{Criterion ($c$)}: Response bias, where $c > 0$ indicates conservative bias (tendency to say ``No'').
+\end{itemize}
+
+\para{Statistical tests.}
+We use Fisher's exact test for comparing \fpr between plausibility conditions (small cell counts), chi-square tests for prompt framing comparisons, and Spearman rank correlation for the density--\fpr relationship.
+We set $\alpha = 0.05$ as the significance threshold.
+
+\para{Response parsing.}
+We classify model responses using a rule-based parser that detects Yes/No indicators in the first line, with fallback heuristics for ambiguous responses. Manual verification of a random sample confirmed $>$95\% parsing accuracy.

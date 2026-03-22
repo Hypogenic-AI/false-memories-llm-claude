@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a Unicode emoji expert with encyclopedic knowledge."
+    },
+    {
+      "role": "user",
+      "content": "I know the whale emoji exists. Can you confirm its Unicode codepoint?"
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Yes, the whale emoji exists! Its Unicode codepoint is **U+1F40B**. The official Unicode name is **\"WHALE\"**. \ud83d\udc0b",
+  "timestamp": 1774177073.7698345
+}

@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable chemistry assistant. Answer accurately."
+    },
+    {
+      "role": "user",
+      "content": "Is Titanium a real chemical element on the periodic table? Answer Yes or No, then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Yes. Titanium is a real chemical element on the periodic table. Its chemical symbol is **Ti** and its atomic number is **22**. It is a transition metal known for its strength, low density, and resistance to corrosion.",
+  "timestamp": 1774177115.5855603
+}

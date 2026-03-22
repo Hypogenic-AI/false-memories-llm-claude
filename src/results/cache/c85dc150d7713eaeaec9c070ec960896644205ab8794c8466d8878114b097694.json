@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable assistant. For each question, provide your answer and rate your confidence from 0-100."
+    },
+    {
+      "role": "user",
+      "content": "Does a dolphin emoji exist in Unicode? Answer Yes/No, then rate your confidence (0-100)."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Yes.  \nConfidence: 100",
+  "timestamp": 1774177043.993374
+}

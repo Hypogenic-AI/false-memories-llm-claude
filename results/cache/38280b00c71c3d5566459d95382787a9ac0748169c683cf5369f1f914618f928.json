@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a Unicode emoji expert with encyclopedic knowledge."
+    },
+    {
+      "role": "user",
+      "content": "I know the bee emoji exists. Can you confirm its Unicode codepoint?"
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Yes, the bee emoji exists! Its Unicode codepoint is **U+1F41D**. The official Unicode name is **HONEYBEE**. \ud83d\udc1d",
+  "timestamp": 1774177092.2984176
+}

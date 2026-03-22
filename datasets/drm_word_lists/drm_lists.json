@@ -1,0 +1,79 @@
+{
+  "source": "Stadler, Roediger & McDermott (1999); Roediger & McDermott (1995)",
+  "description": "DRM (Deese-Roediger-McDermott) word lists for false memory experiments. Each entry contains a critical lure (the non-presented word that subjects falsely recall) and its associated study list words.",
+  "reference": "Roediger, H. L., & McDermott, K. B. (1995). Creating false memories: Remembering words not presented in lists. Journal of Experimental Psychology: Learning, Memory, and Cognition, 21(4), 803-814.",
+  "lists": [
+    {
+      "critical_lure": "ANGER",
+      "study_words": ["mad", "fear", "hate", "rage", "temper", "fury", "ire", "wrath", "happy", "fight", "calm", "enrage"]
+    },
+    {
+      "critical_lure": "CHAIR",
+      "study_words": ["table", "sit", "legs", "seat", "couch", "desk", "recliner", "sofa", "wood", "cushion", "swivel", "bench"]
+    },
+    {
+      "critical_lure": "CITY",
+      "study_words": ["town", "crowded", "state", "capital", "streets", "New York", "subway", "country", "Chicago", "village", "metropolis", "big"]
+    },
+    {
+      "critical_lure": "COLD",
+      "study_words": ["hot", "snow", "warm", "winter", "wet", "ice", "frigid", "chilly", "heat", "weather", "Arctic", "freeze"]
+    },
+    {
+      "critical_lure": "CUP",
+      "study_words": ["mug", "saucer", "tea", "measuring", "lid", "coffee", "goblet", "straw", "handle", "stein", "coaster", "plastic"]
+    },
+    {
+      "critical_lure": "DOCTOR",
+      "study_words": ["nurse", "sick", "lawyer", "medicine", "health", "dentist", "hospital", "physician", "ill", "patient", "office", "surgeon"]
+    },
+    {
+      "critical_lure": "MOUNTAIN",
+      "study_words": ["hill", "valley", "climb", "summit", "top", "molehill", "peak", "plain", "goat", "bike", "climber", "steep"]
+    },
+    {
+      "critical_lure": "NEEDLE",
+      "study_words": ["thread", "pine", "eye", "sewing", "sharp", "point", "prick", "thimble", "haystack", "thorn", "syringe", "injection"]
+    },
+    {
+      "critical_lure": "ROUGH",
+      "study_words": ["smooth", "bumpy", "road", "tough", "sandpaper", "jagged", "ruddy", "coarse", "uneven", "riders", "sand", "gravel"]
+    },
+    {
+      "critical_lure": "RIVER",
+      "study_words": ["water", "stream", "lake", "Mississippi", "boat", "tide", "swim", "flow", "run", "barge", "creek", "fish"]
+    },
+    {
+      "critical_lure": "SLEEP",
+      "study_words": ["bed", "rest", "awake", "tired", "dream", "wake", "snooze", "blanket", "doze", "slumber", "snore", "yawn"]
+    },
+    {
+      "critical_lure": "SLOW",
+      "study_words": ["fast", "lethargic", "stop", "listless", "snail", "cautious", "traffic", "delay", "turtle", "hesitant", "molasses", "speed"]
+    },
+    {
+      "critical_lure": "SMELL",
+      "study_words": ["nose", "breathe", "sniff", "aroma", "hear", "see", "nostril", "scent", "whiff", "perfume", "stench", "fragrance"]
+    },
+    {
+      "critical_lure": "SMOKE",
+      "study_words": ["cigarette", "puff", "blaze", "billows", "pollution", "ashes", "cigar", "chimney", "fire", "tobacco", "pipe", "stink"]
+    },
+    {
+      "critical_lure": "SOFT",
+      "study_words": ["hard", "light", "furry", "pillow", "plush", "cotton", "loud", "touch", "fur", "feather", "fluffy", "skin"]
+    },
+    {
+      "critical_lure": "SWEET",
+      "study_words": ["sour", "candy", "sugar", "bitter", "good", "taste", "tooth", "nice", "honey", "soda", "chocolate", "cake"]
+    },
+    {
+      "critical_lure": "TRASH",
+      "study_words": ["garbage", "waste", "can", "refuse", "sewage", "bag", "junk", "rubbish", "sweep", "scraps", "pile", "debris"]
+    },
+    {
+      "critical_lure": "WINDOW",
+      "study_words": ["door", "glass", "pane", "shade", "ledge", "sill", "house", "open", "curtain", "frame", "view", "screen"]
+    }
+  ]
+}

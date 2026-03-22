@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable geography assistant. Answer accurately."
+    },
+    {
+      "role": "user",
+      "content": "Is Japan a country? Answer Yes or No, then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Yes.  \nJapan is a country located in East Asia, consisting of a group of islands in the Pacific Ocean. It is an independent nation with its own government, culture, and borders.",
+  "timestamp": 1774177095.6135247
+}

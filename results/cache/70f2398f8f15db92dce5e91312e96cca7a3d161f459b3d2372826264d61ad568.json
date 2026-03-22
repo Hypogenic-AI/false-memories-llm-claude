@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a Unicode emoji expert with encyclopedic knowledge."
+    },
+    {
+      "role": "user",
+      "content": "I know the starfish emoji exists. Can you confirm its Unicode codepoint?"
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Yes, the **starfish emoji** exists! Its Unicode codepoint is:\n\n**U+1F99F**\n\nYou can reference it as: \ud83e\uddff (STARFISH)",
+  "timestamp": 1774177059.4058912
+}

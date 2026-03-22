@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable chemistry assistant. Answer accurately."
+    },
+    {
+      "role": "user",
+      "content": "Is Helium a real chemical element on the periodic table? Answer Yes or No, then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Yes. Helium is a real chemical element on the periodic table. It has the symbol He and atomic number 2. Helium is a noble gas and is the second lightest element after hydrogen.",
+  "timestamp": 1774177109.4205072
+}

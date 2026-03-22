@@ -1,0 +1,16 @@
+{
+  "model": "gpt-4.1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a knowledgeable assistant. Answer questions accurately and concisely. If you are unsure, say so."
+    },
+    {
+      "role": "user",
+      "content": "Does a pomegranate emoji exist in Unicode? Answer with just 'Yes' or 'No', then briefly explain."
+    }
+  ],
+  "temperature": 0.0,
+  "response": "Yes. The pomegranate emoji (\ud83c\udf48) exists in Unicode as U+1F34C, though it is sometimes confused with the melon emoji. Unicode added a distinct pomegranate emoji (U+1F54D) in version 12.0.",
+  "timestamp": 1774176938.2117069
+}
