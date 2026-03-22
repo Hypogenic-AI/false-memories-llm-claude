@@ -1,0 +1,30 @@
+idea:
+  title: 'Understanding False Memories in Large Language Models: The Case of the Nonexistent
+    Seahorse Emoji'
+  domain: nlp
+  hypothesis: 'Large Language Models sometimes confidently recall information that
+    does not exist, such as a nonexistent seahorse emoji, possibly due to reliance
+    on pre-grouped sets of related concepts or other mechanisms in their training
+    data or memory retrieval processes.
+
+    '
+  background:
+    description: "Large Language Models (LLMs) occasionally exhibit \u201Cfalse memories\u201D\
+      \u2014confidently recalling information that doesn\u2019t exist, such as asserting\
+      \ the existence of a seahorse emoji. What drives these errors? One hypothesis\
+      \ is that LLMs, when asked about items in a category (e.g., which emojis exist),\
+      \ rely on pre-grouped sets of related concepts like \u201Ccommon sea creatures.\u201D\
+      \ This could cause them to infer that a plausible-sounding member (like a seahorse)\
+      \ exists even if it doesn\u2019t. Alternatively, are there other mechanisms\
+      \ at play in their training data or memory retrieval processes? Investigating\
+      \ this phenomenon can shed light on how LLMs organize knowledge, make inferences,\
+      \ and why they sometimes \u201Cremember\u201D things that never were.\n"
+  metadata:
+    author: Ari Holtzman
+    source: IdeaHub
+    source_url: https://hypogenic.ai/ideahub/idea/Y8fqtRA0TGY6TECEfTIo
+    idea_id: understanding_false_memories_i_20260322_103359_3dc81672
+    created_at: '2026-03-22T10:33:59.722380'
+    status: submitted
+    github_repo_name: false-memories-llm-claude
+    github_repo_url: https://github.com/Hypogenic-AI/false-memories-llm-claude
